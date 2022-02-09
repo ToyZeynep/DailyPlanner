@@ -443,3 +443,37 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         
     }
 }
+//MARK: SearchBar Delegate
+
+extension PlanListViewController : UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(PlanListViewController.reload), object: nil)
+        self.perform(#selector(PlanListViewController.reload), with: nil, afterDelay: 0.7)
+      }
+    
+    @objc func reload() {
+        guard let searchText = planListSearchBar.text else { return }
+        if searchText == "" {
+            
+            self.viewModel?.planList.removeAll()
+            interactor?.fetchPlanList()
+            planListTableView.reloadData()
+        } else {
+            search(searchText: searchText)
+        }
+    }
+
+    func search(searchText: String){
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        for task in (viewModel?.planList)! {
+            let str = task?.name
+            if str!.contains(searchText){
+                filteredData.append(task)
+            }
+        }
+        viewModel?.planList.removeAll()
+        viewModel?.planList.append(contentsOf: filteredData)
+        planListTableView.reloadData()
+    }
+}
