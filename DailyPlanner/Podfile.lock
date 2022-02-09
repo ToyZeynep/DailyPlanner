@@ -1,0 +1,40 @@
+PODS:
+  - Material (3.1.8):
+    - Material/Core (= 3.1.8)
+  - Material/Core (3.1.8):
+    - Motion (~> 3.1.1)
+  - McPicker (3.0.0)
+  - Motion (3.1.3):
+    - Motion/Core (= 3.1.3)
+  - Motion/Core (3.1.3)
+  - SnackBar.swift (0.1.0):
+    - SnapKit
+  - SnapKit (5.0.1)
+  - SwiftGifOrigin (1.7.0)
+
+DEPENDENCIES:
+  - Material (~> 3.1.0)
+  - McPicker (~> 3.0.0)
+  - SnackBar.swift
+  - SwiftGifOrigin (~> 1.7.0)
+
+SPEC REPOS:
+  trunk:
+    - Material
+    - McPicker
+    - Motion
+    - SnackBar.swift
+    - SnapKit
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
+  McPicker: ba38be56a8194faa5249eca4226c364eed628044
+  Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
+  SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+
+PODFILE CHECKSUM: 2475f876e256571a90ae563fa8b21b299f5f6faa
+
+COCOAPODS: 1.11.2
