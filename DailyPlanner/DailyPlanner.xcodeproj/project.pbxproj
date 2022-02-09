@@ -25,6 +25,7 @@
 		22DDC62627B3C7360037DC92 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62527B3C7360037DC92 /* LocalNotificationManager.swift */; };
 		22DDC62827B3C78A0037DC92 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62727B3C78A0037DC92 /* NotificationManager.swift */; };
 		22DDC62A27B3C7BE0037DC92 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */; };
+		22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */; };
 		9AE64C4464AA8D3F802FC66D /* Pods_DailyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C6B2400701F4B612747D44 /* Pods_DailyPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		22DDC62527B3C7360037DC92 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		22DDC62727B3C78A0037DC92 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListPresenter.swift; sourceTree = "<group>"; };
 		77C6B2400701F4B612747D44 /* Pods_DailyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33A2981975F05DECFE1A0DC /* Pods-DailyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyPlanner.release.xcconfig"; path = "Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		FE2632E3F895D1BD6D3FA12F /* Pods-DailyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				22DDC61D27B3C4C20037DC92 /* PlanListCell */,
 				22DDC61327B3C3F20037DC92 /* PlanListViewController.swift */,
 				22DDC61527B3C4150037DC92 /* PlanListInteractor.swift */,
+				22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */,
 				22DDC61727B3C4920037DC92 /* PlanListWorker.swift */,
 				22DDC61927B3C4A20037DC92 /* PlanListRouter.swift */,
 				22DDC61B27B3C4AE0037DC92 /* PlanListModels.swift */,
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DDC62627B3C7360037DC92 /* LocalNotificationManager.swift in Sources */,
+				22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */,
 				22DDC62027B3C4FE0037DC92 /* PlanListTableViewCell.swift in Sources */,
 				22DDC60427B3B2980037DC92 /* DailyPlanner.xcdatamodeld in Sources */,
 				22DDC5FE27B3B2980037DC92 /* SplashViewController.swift in Sources */,
