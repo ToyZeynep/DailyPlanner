@@ -81,7 +81,6 @@
 			children = (
 				22015B7027B423C400AC3EEB /* TableViewExtension.swift */,
 				22015B7227B4241200AC3EEB /* ViewExtension.swift */,
-				22015B7427B4245300AC3EEB /* Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -97,11 +96,20 @@
 		22015B7927B424A600AC3EEB /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				22015B7A27B452D500AC3EEB /* Helpers */,
 				22DDC62427B3C68D0037DC92 /* ManagerProtocols */,
 				22015B6F27B423A500AC3EEB /* Extensions */,
 				22015B7627B4247500AC3EEB /* Constants */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		22015B7A27B452D500AC3EEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				22015B7427B4245300AC3EEB /* Alert.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		22DDC5ED27B3B2980037DC92 = {

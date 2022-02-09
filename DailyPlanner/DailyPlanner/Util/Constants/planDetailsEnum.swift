@@ -29,15 +29,10 @@ enum Sort: String {
 
 enum Filter: String {
  
-    case high = "high"
-    case medium = "medium"
-    case low = "low"
-    case home = "1"
-    case business = "2"
-    case shopping = "3"
-    case feelGood = "55"
-    case completed = "completed"
-    case inCompleted = "inCompleted"
+    case categori = "Categori"
+    case isComplete = "IsComplete"
+    case priority = "Priority"
+    case willNotify = "WillNotify"
     case cancel = "Deselect"
     
 }
@@ -47,3 +42,7 @@ enum IsComplete: String {
     case inCompleted = "inCompleted"
 }
 
+enum WillNotify: String {
+    case willNotify = "willNotify"
+    case willNotNotify = "willNotNotify"
+}
