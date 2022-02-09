@@ -47,6 +47,7 @@ final class PlanListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         navigationController?.navigationBar.backgroundColor = .systemPurple
     }
     
@@ -70,4 +71,33 @@ extension PlanListViewController: PlanListDisplayLogic {
     func displayPlan(viewModel: PlanList.Fetch.ViewModel) {
         self.viewModel = viewModel
     }
+}
+ 
+
+// MARK: TableView Delegate and DataSource
+
+extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return (viewModel?.planList.count) ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListTableViewCell") as?
+                PlanListTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
 }
