@@ -47,7 +47,7 @@ final class PlanListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
         navigationController?.navigationBar.backgroundColor = .systemPurple
     }
     
@@ -79,12 +79,23 @@ extension PlanListViewController: PlanListDisplayLogic {
 extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if viewModel?.planList.count == 0 {
+                self.planListTableView.setEmptyMessage("Your PlanList is empty Let's start :)")
+            } else {
+                self.planListTableView.restore()
+            }
         return (viewModel?.planList.count) ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListTableViewCell") as?
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListCell") as?
                 PlanListTableViewCell else { return UITableViewCell() }
+
+        willNotify(button: cell.willNotifyButton, index: indexPath.row)
+        cell.willNotifyButton.addTapGesture { [self] in
+            willNotifyChangeButtonAction(index: indexPath.row)
+           
+        }
         return cell
     }
     
@@ -100,4 +111,44 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         return 80
     }
 
+    
+    
+    
+    
+    
+    
+    
+    func willNotify(button: UIButton , index: Int ){
+        
+        switch viewModel?.planList[index]?.willNotify {
+        case true:
+            interactor?.addNotifications( indexValue: index)
+            button.setImage(UIImage(systemName: "bell.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        case false:
+            button.setImage(UIImage(systemName: "bell.slash")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        case .none:
+            break
+        case .some(_):
+            break
+        }
+    }
+    
+    func willNotifyChangeButtonAction(index: Int){
+        
+        let editAction = UIAlertAction(title: "OK", style: .default) { [self] UIAlertAction in
+        interactor?.updateWillNotify(index: index)
+        interactor?.fetchPlanList()
+        planListTableView.reloadData()
+    }
+        switch viewModel?.planList[index]?.willNotify {
+        case true:
+            interactor?.alertAction(title: "Are You Sure ", message: "Don't want to receive notifications for this plan?", action: editAction)
+        case false:
+            interactor?.alertAction(title: "Are You Sure ", message: "Do you want to receive notifications for this plan?", action: editAction)
+        case .none:
+            break
+        case .some(_):
+            break
+        }
+    }
 }
