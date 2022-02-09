@@ -91,6 +91,11 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListCell") as?
                 PlanListTableViewCell else { return UITableViewCell() }
 
+        isComplete(index: indexPath.row, button: cell.isCompleteButton)
+       
+        cell.isCompleteButton.addTapGesture { [self] in
+            isCompleteButtonAction(index: indexPath.row)
+        }
         willNotify(button: cell.willNotifyButton, index: indexPath.row)
         cell.willNotifyButton.addTapGesture { [self] in
             willNotifyChangeButtonAction(index: indexPath.row)
@@ -111,7 +116,40 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         return 80
     }
 
+    func isComplete(index: Int , button: UIButton){
+        switch viewModel?.planList[index]?.isComplete{
+        case true:
+            button.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            button.tintColor = .systemPurple
+        case false :
+            button.setImage(UIImage(named: "x.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            button.tintColor = .systemPurple
+        case .none:
+            break
+        case .some(_):
+            break
+        }
+    }
     
+    func isCompleteButtonAction(index: Int){
+        
+        let editAction = UIAlertAction(title: "OK", style: .default) { [self] UIAlertAction in
+            
+            interactor?.updateIsComplete(index: index)
+            interactor?.fetchPlanList()
+            planListTableView.reloadData()
+        }
+        switch viewModel?.planList[index]?.isComplete{
+        case true:
+        interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as incomplete?", action: editAction)
+        case false:
+        interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as complete?", action: editAction)
+        case .none:
+            break
+        case .some(_):
+            break
+        }
+    }
     
     
     
@@ -122,7 +160,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         
         switch viewModel?.planList[index]?.willNotify {
         case true:
-            interactor?.addNotifications( indexValue: index)
+            interactor?.addWillNotify(index: index)
             button.setImage(UIImage(systemName: "bell.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
         case false:
             button.setImage(UIImage(systemName: "bell.slash")?.withRenderingMode(.alwaysTemplate), for: .normal)
