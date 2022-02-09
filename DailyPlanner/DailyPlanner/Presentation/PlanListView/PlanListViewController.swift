@@ -92,7 +92,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
                 PlanListTableViewCell else { return UITableViewCell() }
 
         isComplete(index: indexPath.row, button: cell.isCompleteButton)
-       
+        priorityViewStatus(index: indexPath.row, view: cell.priorityView)
         cell.isCompleteButton.addTapGesture { [self] in
             isCompleteButtonAction(index: indexPath.row)
         }
@@ -150,12 +150,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
             break
         }
     }
-    
-    
-    
-    
-    
-    
+   
     func willNotify(button: UIButton , index: Int ){
         
         switch viewModel?.planList[index]?.willNotify {
@@ -185,6 +180,22 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
             interactor?.alertAction(title: "Are You Sure ", message: "Do you want to receive notifications for this plan?", action: editAction)
         case .none:
             break
+        case .some(_):
+            break
+        }
+    }
+    
+    func priorityViewStatus(index: Int , view: UIView){
+        switch viewModel?.planList[index]?.priority{
+            
+        case Priority.high.rawValue:
+            view.backgroundColor = .purple
+        case Priority.medium.rawValue:
+            view.backgroundColor = .systemPurple
+        case Priority.low.rawValue:
+            view.backgroundColor = .magenta
+        case .none:
+             break
         case .some(_):
             break
         }
