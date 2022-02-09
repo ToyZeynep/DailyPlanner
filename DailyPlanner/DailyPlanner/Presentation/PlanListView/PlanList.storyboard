@@ -35,6 +35,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="sort">
                                     <color key="baseForegroundColor" red="0.80855405329999996" green="0.61191081999999997" blue="0.85912507770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="sortButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1Ma-lK-nlR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7A-0n-xKe">
                                 <rect key="frame" x="298" y="279" width="45" height="45"/>
@@ -47,6 +50,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="filter">
                                     <color key="baseForegroundColor" red="0.80855405329999996" green="0.61191081999999997" blue="0.85912507770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="filterButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RgR-dZ-u2e"/>
+                                </connections>
                             </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-0t-DcU">
                                 <rect key="frame" x="0.0" y="279" width="268" height="45"/>

@@ -29,6 +29,9 @@ final class PlanListViewController: UIViewController {
     @IBOutlet weak var planListSortButton: UIButton!
     @IBOutlet weak var planListTableView: UITableView!
     
+    
+   
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -67,7 +70,207 @@ final class PlanListViewController: UIViewController {
         router.viewController = viewController
         router.dataStore = interactor
     }
-}
+    
+    
+    @IBAction func sortButtonTapped(_ sender: UIButton) {
+        showPicker(planListSortButton, list: sort )
+    }
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        showPicker(planListFilterButton, list: filter)
+    }
+    
+    let sort : [String] = [Sort.alfabetik1.rawValue , Sort.alfabetik2.rawValue , Sort.date1.rawValue , Sort.date2.rawValue , Filter.cancel.rawValue]
+    
+    let filter : [String] = [ Filter.categori.rawValue , Filter.isComplete.rawValue  ,Filter.priority.rawValue  , Filter.willNotify.rawValue ,Filter.cancel.rawValue ]
+
+    var selectedSort : String?
+    
+    
+    func showPicker(_ sender: UIButton, list: [String]){
+        McPicker.showAsPopover(data:[list], fromViewController: self, sourceView: sender, doneHandler:{ [weak self] (selections: [Int : String]) -> Void in
+            if let name = selections[0] {
+                self!.interactor?.fetchPlanList()
+                switch name {
+                
+                case Filter.categori.rawValue :
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            let categoriList = [Category.home.rawValue, Category.shopping.rawValue , Category.business.rawValue , Category.feelGood.rawValue]
+                            self!.showPicker(sender, list: categoriList)
+                        }
+                case Filter.isComplete.rawValue:
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let isCompleteList = [IsComplete.completed.rawValue, IsComplete.inCompleted.rawValue]
+                        self!.showPicker(sender, list: isCompleteList)
+                    }
+                        
+                case Filter.priority.rawValue:
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let priorityList = [Priority.high.rawValue, Priority.medium.rawValue, Priority.low.rawValue]
+                        self!.showPicker(sender, list: priorityList)
+                    }
+                case Filter.willNotify.rawValue:
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let notifyList = [WillNotify.willNotify.rawValue, WillNotify.willNotNotify.rawValue]
+                        self!.showPicker(sender, list: notifyList)
+                    }
+                    
+                    
+                case Category.home.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.category
+                        if str!.contains("home"){
+                            filteredData.append(task)
+                        }
+                    }
+                    
+                case Category.business.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.category
+                        if str!.contains("business"){
+                            filteredData.append(task)
+                        }
+                    }
+                    
+                case Category.shopping.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.category
+                        if str!.contains("shopping"){
+                            filteredData.append(task)
+                        }
+                    }
+                    
+                case Category.feelGood.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.category
+                        if str!.contains("feelGood"){
+                            filteredData.append(task)
+                        }
+                    }
+                case Priority.high.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.priority
+                        if str!.contains("high"){
+                            filteredData.append(task)
+                        }
+                    }
+                case Priority.medium.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.priority
+                        if str!.contains("medium"){
+                            filteredData.append(task)
+                        }
+                    }
+                case Priority.low.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.priority
+                        if str!.contains("low"){
+                            filteredData.append(task)
+                        }
+                    }
+                    
+                case IsComplete.completed.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.isComplete
+                        if str == true{
+                            filteredData.append(task)
+                        }
+                    }
+                case IsComplete.inCompleted.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.isComplete
+                        if str == false{
+                            filteredData.append(task)
+                        }
+                    }
+                    
+                case WillNotify.willNotNotify.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.willNotify
+                        if str == true{
+                            filteredData.append(task)
+                        }
+                    }
+                case WillNotify.willNotNotify.rawValue:
+                    
+                    self!.interactor?.fetchPlanList()
+                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+                    for task in (self!.viewModel?.planList)! {
+                        let str = task?.willNotify
+                        if str == false{
+                            filteredData.append(task)
+                        }
+                    }
+                case Sort.alfabetik1.rawValue:
+                    
+                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! > ($1?.name!)!})
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: sortList!)
+                    self!.planListTableView.reloadData()
+                    
+                case Sort.alfabetik2.rawValue:
+                    
+                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! < ($1?.name!)!})
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: sortList!)
+                    self!.planListTableView.reloadData()
+                    
+                case Sort.date1.rawValue:
+                    
+                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.completionTime!)! < ($1?.completionTime!)!})
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: sortList!)
+                    self!.planListTableView.reloadData()
+                    
+                case Sort.date2.rawValue:
+                    
+                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.completionTime!)! > ($1?.completionTime!)!})
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: sortList!)
+                    self!.planListTableView.reloadData()
+
+                        
+                case Filter.cancel.rawValue :
+                    
+                    self!.interactor?.fetchPlanList()
+                    self!.planListTableView.reloadData()
+                    
+                default:
+                    break
+        }
+    }
+})}}
+
 // MARK: ListDisplayLogic
 extension PlanListViewController: PlanListDisplayLogic {
     func displayPlan(viewModel: PlanList.Fetch.ViewModel) {
