@@ -20,7 +20,11 @@ final class PlanListViewController: UIViewController {
     var router: (PlanListRoutingLogic & PlanListDataPassing)?
     var viewModel: PlanList.Fetch.ViewModel?
     
+    @IBOutlet weak var constantLabelYour: UILabel!
     
+    @IBOutlet weak var constantLabelPlans: UILabel!
+    @IBOutlet weak var percentIsCompleteLabel: UILabel!
+    @IBOutlet weak var transparentView: UIView!
     @IBOutlet weak var planListAddButton: UIButton!
     @IBOutlet weak var planListImageView: UIImageView!
     @IBOutlet weak var planListDateLabel: UILabel!
@@ -53,7 +57,6 @@ final class PlanListViewController: UIViewController {
         super.viewDidLoad()
         interactor?.fetchPlanList()
         planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
-        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xe4bce5)
     }
     
     // MARK: Setup
@@ -267,14 +270,38 @@ final class PlanListViewController: UIViewController {
                     
                 default:
                     break
+           }
         }
+     }
+  )}
+    
+    
+    
+    
+    
+    func percentIsComplete() -> Int{
+        var count = Int()
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        for task in (self.viewModel?.planList)! {
+            let str = task?.isComplete
+            if str == true{
+                filteredData.append(task)
+            }
+        }
+        if viewModel?.planList.count != 0{
+             count = ((filteredData.count) * 100) / ((viewModel?.planList.count)!)
+        }
+        
+        return count
     }
-})}}
+    
+}
 
 // MARK: ListDisplayLogic
 extension PlanListViewController: PlanListDisplayLogic {
     func displayPlan(viewModel: PlanList.Fetch.ViewModel) {
         self.viewModel = viewModel
+        planListTableView.reloadData()
         planListFilterButton.setImage(UIImage(named: "filter.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
         planListFilterButton.tintColor = UIColor(rgb: 0x9969c1)
         planListSortButton.setImage(UIImage(named: "sort.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -285,6 +312,12 @@ extension PlanListViewController: PlanListDisplayLogic {
         planListAddButton.backgroundColor = UIColor(rgb: 0xe4bce5)
         planListSearchBar.borderColor = UIColor(rgb: 0xe4bce5)
         planListSearchBar.tintColor = UIColor(rgb: 0xe4bce5)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM"
+        let date = formatter.string(from: Date())
+        planListDateLabel.text =  date
+        
+        
     }
 }
  
@@ -295,7 +328,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if viewModel?.planList.count == 0 {
-                self.planListTableView.setEmptyMessage("Your PlanList is empty Let's start :)")
+                self.planListTableView.setEmptyMessage("Your PlanList is empty ! Let's start :)")
             } else {
                 self.planListTableView.restore()
             }
