@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Material/Material.framework
+${BUILT_PRODUCTS_DIR}/McPicker/McPicker.framework
+${BUILT_PRODUCTS_DIR}/Motion/Motion.framework
+${BUILT_PRODUCTS_DIR}/SnackBar.swift/SnackBar_swift.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework
