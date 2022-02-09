@@ -90,7 +90,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListCell") as?
                 PlanListTableViewCell else { return UITableViewCell() }
-
+        categoryImageView(index: indexPath.row, imageView: cell.categoryImageView)
         isComplete(index: indexPath.row, button: cell.isCompleteButton)
         priorityViewStatus(index: indexPath.row, view: cell.priorityView)
         cell.isCompleteButton.addTapGesture { [self] in
@@ -199,5 +199,27 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         case .some(_):
             break
         }
+    }
+    
+    func categoryImageView(index: Int , imageView: UIImageView){
+        
+        switch viewModel?.planList[index]?.category{
+            
+        case Category.home.rawValue:
+            imageView.image = UIImage(systemName: "homekit")
+        case Category.business.rawValue:
+            imageView.image =  UIImage(systemName: "bag")
+        case Category.feelGood.rawValue:
+            imageView.image =  UIImage(systemName: "star.fill")
+        case Category.shopping.rawValue:
+            imageView.image =  UIImage(systemName: "cart.badge.plus.fill")
+            
+            
+        case .none:
+            break
+        case .some(_):
+            break
+        }
+        
     }
 }
