@@ -18,7 +18,14 @@ class SplashViewController: UIViewController {
         splashImageView.loadGif(asset: "splash")
         splashImageView.translatesAutoresizingMaskIntoConstraints = false
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+            let storyBoard = UIStoryboard(name: "PlanList", bundle: nil)
+            let destVC: PlanListViewController = storyBoard.instantiateViewController(identifier: "PlanList")
+            destVC.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(destVC, animated: true)
+        
     }
 
 }
 
+}
