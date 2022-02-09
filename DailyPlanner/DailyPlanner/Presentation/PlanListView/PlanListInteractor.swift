@@ -14,7 +14,7 @@ protocol PlanListBusinessLogic: AnyObject {
     func getNotification(name: String)
     func removePlan(index: Int)
     func updateIsComplete(index: Int)
-    func addNotifications(indexValue: Int)
+    func addWillNotify(index: Int)
     func updateWillNotify(index: Int)
     func removeWillNotify(identifier: [String])
     func alertAction(title: String, message: String, action: UIAlertAction)

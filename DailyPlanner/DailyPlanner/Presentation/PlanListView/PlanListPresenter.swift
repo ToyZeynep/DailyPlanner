@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PlanListPresentationLogic: AnyObject {
-    func presentToDo(response: PlanList.Fetch.Response)
+    func presentPlan(response: PlanList.Fetch.Response)
     func alertAction(title: String , message: String , action: UIAlertAction)
     func alert(title: String , message: String)
 }
