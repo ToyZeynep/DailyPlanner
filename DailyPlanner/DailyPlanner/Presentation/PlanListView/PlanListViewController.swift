@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import Foundation
 import McPicker
+import Material
 
 protocol PlanListDisplayLogic: AnyObject {
     func displayPlan(viewModel: PlanList.Fetch.ViewModel)
@@ -47,8 +48,9 @@ final class PlanListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor?.fetchPlanList()
         planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
-        navigationController?.navigationBar.backgroundColor = .systemPurple
+        navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xe4bce5)
     }
     
     // MARK: Setup
@@ -70,6 +72,16 @@ final class PlanListViewController: UIViewController {
 extension PlanListViewController: PlanListDisplayLogic {
     func displayPlan(viewModel: PlanList.Fetch.ViewModel) {
         self.viewModel = viewModel
+        planListFilterButton.setImage(UIImage(named: "filter.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        planListFilterButton.tintColor = UIColor(rgb: 0x9969c1)
+        planListSortButton.setImage(UIImage(named: "sort.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        planListSortButton.tintColor = UIColor(rgb: 0x9969c1)
+        planListAddButton.layer.cornerRadius = 30
+        planListAddButton.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        planListAddButton.tintColor = .white
+        planListAddButton.backgroundColor = UIColor(rgb: 0xe4bce5)
+        planListSearchBar.borderColor = UIColor(rgb: 0xe4bce5)
+        planListSearchBar.tintColor = UIColor(rgb: 0xe4bce5)
     }
 }
  
@@ -121,13 +133,14 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
 
     func isComplete(index: Int , button: UIButton){
+        button.tintColor = UIColor(rgb: 0x9969c1)
         switch viewModel?.planList[index]?.isComplete{
         case true:
             button.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor = .systemPurple
+            button.tintColor = UIColor(rgb: 0x9969c1)
         case false :
             button.setImage(UIImage(named: "x.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor = .systemPurple
+            button.tintColor = UIColor(rgb: 0x9969c1)
         case .none:
             break
         case .some(_):
@@ -156,7 +169,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
    
     func willNotify(button: UIButton , index: Int ){
-        
+        button.tintColor = UIColor(rgb: 0x9969c1)
         switch viewModel?.planList[index]?.willNotify {
         case true:
             interactor?.addWillNotify(index: index)
@@ -206,7 +219,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
     
     func categoryImageView(index: Int , imageView: UIImageView){
-        
+        imageView.tintColor = UIColor(rgb: 0x9969c1)
         switch viewModel?.planList[index]?.category{
             
         case Category.home.rawValue:
