@@ -109,6 +109,10 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        viewModel?.planList.remove(at: indexPath.row)
+        self.planListTableView.deleteRows(at: [indexPath], with: .automatic)
+        interactor?.removePlan(index: indexPath.row)
     
     }
     
