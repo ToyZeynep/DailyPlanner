@@ -15,9 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(rgb: 0xe4bce5)
+
+            appearance.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 40.0),
+                                                   .foregroundColor: UIColor.purple]
+            appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 25.0),
+                                                  .foregroundColor: UIColor.white]
+
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
         return true
     }
-
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

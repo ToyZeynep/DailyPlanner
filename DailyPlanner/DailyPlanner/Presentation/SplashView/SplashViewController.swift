@@ -18,6 +18,7 @@ class SplashViewController: UIViewController {
         splashImageView.loadGif(asset: "splash")
         splashImageView.translatesAutoresizingMaskIntoConstraints = false
         splashImageView.contentMode = .scaleAspectFit
+        view.backgroundColor = UIColor(rgb: 0xe4bce5)
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
