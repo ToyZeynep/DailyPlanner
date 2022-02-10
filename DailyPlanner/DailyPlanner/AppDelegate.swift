@@ -9,14 +9,28 @@ import UIKit
 import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate  {
 
-
+    let notifCenter = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
   
+        requestAuthForLocalNotifications()
         return true
+    }
+
+    func requestAuthForLocalNotifications() {
+        notifCenter.delegate = self
+        notifCenter.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if error != nil {
+                // Something went wrong
+            }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(UNNotificationPresentationOptions.init(arrayLiteral: [.banner, .badge]))
     }
     // MARK: UISceneSession Lifecycle
 
