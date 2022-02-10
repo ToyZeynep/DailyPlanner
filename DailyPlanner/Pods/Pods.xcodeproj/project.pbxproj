@@ -125,7 +125,7 @@
 		7E74EC2E9F379A0CB6578630098631C2 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F579CF194A11A38885C0E11642B2E566 /* CheckButton.swift */; };
 		7EE2FC875056BE0E3E7A7D124172C3C3 /* UIView+Snapkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971E5B52D18BC3CBD4336B7EA3DE3A69 /* UIView+Snapkit.swift */; };
 		8099CED55589887B4E69B4D7DED46A01 /* MatchPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1052E0CD70A6DAB42423360AE9DF95A /* MatchPreprocessor.swift */; };
-		80D26F09B6A6448BFE9457B9ED0A533B /* Material-com.cosmicmind.material.icons in Resources */ = {isa = PBXBuildFile; fileRef = D4F6A2860CB523B85235F862573290FC /* Material-com.cosmicmind.material.icons */; };
+		80D26F09B6A6448BFE9457B9ED0A533B /* com.cosmicmind.material.icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4F6A2860CB523B85235F862573290FC /* com.cosmicmind.material.icons.bundle */; };
 		8137BAB4E347D5A4E263FD40FA9042FB /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D895CD5CA8052E5CCA71C904C95AB /* CollectionView.swift */; };
 		81838E2B9AF5F84CBC304BE5818D1D12 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A5653D156DC68FA89D5D92174FD7C /* ConstraintLayoutGuide+Extensions.swift */; };
 		843C8BE9C6D5AA8EB06C8A3D0D22B22E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A8BB4DCA4250E67F23D7587FC709F7 /* TableViewCell.swift */; };
@@ -159,7 +159,7 @@
 		AC70AB78C009A13917D02290DA9EBF13 /* ChipBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A15B96B16449771EACEFE171156AF /* ChipBar.swift */; };
 		ADCEC90879B9A21FF2062C69A3238B9B /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B751975A8DA38140220EE78E816633 /* LayoutConstraintItem.swift */; };
 		B192E3290E7F9DD93302311634DC8B2D /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314A5B23AD6C677592CBDE8180E2C20 /* ConstraintLayoutGuide.swift */; };
-		B2FAFD746E484BDA3E341684F1EF5F20 /* Material-com.cosmicmind.material.fonts in Resources */ = {isa = PBXBuildFile; fileRef = 906DCF7AE09E64FEC6089566F3CDD431 /* Material-com.cosmicmind.material.fonts */; };
+		B2FAFD746E484BDA3E341684F1EF5F20 /* com.cosmicmind.material.fonts.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 906DCF7AE09E64FEC6089566F3CDD431 /* com.cosmicmind.material.fonts.bundle */; };
 		B37BA3E18CCE6E3CAD6A50BB0021A895 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F10DB50D40A85A2012824541B2807 /* TextStorage.swift */; };
 		B53DE659D00AD287C1EB9FF9DE94E2FF /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473A83E34506DE46E081B9F2541A892 /* Layer.swift */; };
 		B5B36AB066943CEA99BFA8CCB1DDFD83 /* MotionCoordinateSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B557E590A9938D5957CF674964D6175 /* MotionCoordinateSpace.swift */; };
@@ -356,7 +356,7 @@
 		36B859B0F9FE2DD360BDD36764A174C0 /* NavigationDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationDrawerController.swift; path = Sources/iOS/NavigationDrawer/NavigationDrawerController.swift; sourceTree = "<group>"; };
 		3719EC0E72F0547E8B64EA0A8AA9042A /* DisplayStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisplayStyle.swift; path = Sources/iOS/Transition/DisplayStyle.swift; sourceTree = "<group>"; };
 		3760B22E5502EBC92728129233C9D62B /* TableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = Sources/iOS/Table/TableViewController.swift; sourceTree = "<group>"; };
-		38165AB2BE57F67999279EF2C817A9DF /* Pods-DailyPlanner */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DailyPlanner"; path = Pods_DailyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38165AB2BE57F67999279EF2C817A9DF /* Pods_DailyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A8FC0966FAD8299E7A7C8DB43B8B9B /* Material-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Material-dummy.m"; sourceTree = "<group>"; };
 		38EE03F3794048AD8766938D9925CB5D /* MotionProgressRunner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionProgressRunner.swift; path = Sources/Transition/MotionProgressRunner.swift; sourceTree = "<group>"; };
 		39DDF2C85572EFC4F2723210079AD0ED /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
@@ -376,14 +376,14 @@
 		414F238CCFF5B1B66106C590DB942285 /* Material+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Material+UIImage.swift"; path = "Sources/iOS/Extension/Material+UIImage.swift"; sourceTree = "<group>"; };
 		434371F159699DC79F653617C39A7357 /* FABMenuController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FABMenuController.swift; path = Sources/iOS/FABMenu/FABMenuController.swift; sourceTree = "<group>"; };
 		43B69616CF7A593E7EC1AAD02BF6CBFF /* Offset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Offset.swift; path = Sources/iOS/Type/Offset.swift; sourceTree = "<group>"; };
-		443FA6EAD8AD94038AA34DE1C97850C9 /* Material */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Material; path = Material.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		443FA6EAD8AD94038AA34DE1C97850C9 /* Material.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Material.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D44A24B89C601A19EBC19B0A72130 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		477FAECA1821BCF05602119FF0D15780 /* DialogController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DialogController.swift; path = Sources/iOS/Dialogs/DialogController.swift; sourceTree = "<group>"; };
 		481827F83FFCFA3088B1DBD7A62A5ABD /* McPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = McPicker.debug.xcconfig; sourceTree = "<group>"; };
 		48F2375F83D6AD9F23408831E9ED1A75 /* McPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "McPicker-dummy.m"; sourceTree = "<group>"; };
-		4929359851D190238E50C2893C2250D2 /* SnackBar.swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnackBar.swift; path = SnackBar_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4929359851D190238E50C2893C2250D2 /* SnackBar_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnackBar_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AFE7D7AE10C3E9EA84A217B16AD2C8 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		4B94368D533A5042FB15891370F41BAE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Roboto-Medium.ttf"; path = "Sources/Font/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		4B94368D533A5042FB15891370F41BAE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Sources/Font/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		4BB5527451BB62E9D508BE70E2B645C7 /* Device.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Sources/iOS/Device/Device.swift; sourceTree = "<group>"; };
 		4EB5264DBD84E217CA3477E5EBAE497B /* RadioButtonGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonGroup.swift; path = Sources/iOS/ButtonGroup/RadioButtonGroup.swift; sourceTree = "<group>"; };
 		516CD69A822DB9DE6D19E25DB7AAC3BA /* Material.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Material.release.xcconfig; sourceTree = "<group>"; };
@@ -414,9 +414,9 @@
 		67831009EAF7CC0AB03320E5DD90650E /* SnackBar.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnackBar.swift-Info.plist"; sourceTree = "<group>"; };
 		6889868960D809C99BB0129224410848 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		6958946ACED0E9A2F4AE2F23EC6EFAE6 /* BaseIconLayerButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseIconLayerButton.swift; path = Sources/iOS/Button/BaseIconLayerButton.swift; sourceTree = "<group>"; };
-		6A55A668DD441D1ECE496CD79CB81EE0 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Roboto-Thin.ttf"; path = "Sources/Font/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		6A55A668DD441D1ECE496CD79CB81EE0 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Sources/Font/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		6ADE3D6288303ABFAE7106EFFF02A09B /* MotionViewOrderStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionViewOrderStrategy.swift; path = Sources/MotionViewOrderStrategy.swift; sourceTree = "<group>"; };
-		72F46221F70E0B66878329046E72F601 /* Roboto-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Roboto-Light.ttf"; path = "Sources/Font/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		72F46221F70E0B66878329046E72F601 /* Roboto-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Sources/Font/Roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		74D19047789C931E728243A930CA0E35 /* Motion+Obj-C.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+Obj-C.swift"; path = "Sources/Extensions/Motion+Obj-C.swift"; sourceTree = "<group>"; };
 		7656D06A6B34DA545D7C8247A7E3780F /* ChipBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChipBarController.swift; path = Sources/iOS/Chip/ChipBarController.swift; sourceTree = "<group>"; };
 		78D61AF3967E213608DB47455BB03A2C /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
@@ -442,16 +442,16 @@
 		8B35D1B12CC781A38613B135FBC2AEA0 /* MotionViewTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionViewTransitionAnimator.swift; path = Sources/Animator/MotionViewTransitionAnimator.swift; sourceTree = "<group>"; };
 		8BA0917873C6F00AE27A320035F938DB /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Sources/iOS/Card/Card.swift; sourceTree = "<group>"; };
 		8DDF7C0FFABB5B2DE6602B561E7AABCF /* CheckButtonGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckButtonGroup.swift; path = Sources/iOS/ButtonGroup/CheckButtonGroup.swift; sourceTree = "<group>"; };
-		8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftGifOrigin; path = SwiftGifOrigin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGifOrigin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1D895CD5CA8052E5CCA71C904C95AB /* CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = Sources/iOS/Collection/CollectionView.swift; sourceTree = "<group>"; };
 		8E7593C647E31EC5F6C79380D55111FB /* Pods-DailyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DailyPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		8ED6D783C64A67222A3ACD496E0E4C56 /* Switch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Switch.swift; path = Sources/iOS/Switch/Switch.swift; sourceTree = "<group>"; };
 		8F4B85876577E1634EC828EB1D7A9D76 /* McPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "McPicker-Info.plist"; sourceTree = "<group>"; };
 		904954E8DFBFCD658D831B1866259743 /* IconButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IconButton.swift; path = Sources/iOS/Button/IconButton.swift; sourceTree = "<group>"; };
-		906DCF7AE09E64FEC6089566F3CDD431 /* Material-com.cosmicmind.material.fonts */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Material-com.cosmicmind.material.fonts"; path = com.cosmicmind.material.fonts.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		906DCF7AE09E64FEC6089566F3CDD431 /* com.cosmicmind.material.fonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.cosmicmind.material.fonts.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D1A716337DEB645120A85E928B4AD4 /* Motion+CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+CALayer.swift"; path = "Sources/Extensions/Motion+CALayer.swift"; sourceTree = "<group>"; };
 		91A39A8EABEEA2DCA46187736905EEBF /* McPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "McPicker-prefix.pch"; sourceTree = "<group>"; };
-		91DB0612CBA1239EDBDC928F2DB06BD0 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Roboto-Bold.ttf"; path = "Sources/Font/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		91DB0612CBA1239EDBDC928F2DB06BD0 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Sources/Font/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		928558E16C5DEDC907DDBFC28FD47DD5 /* SnackBar.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnackBar.swift-umbrella.h"; sourceTree = "<group>"; };
 		928F8ABF7122678CE2044656CED9FBE6 /* Motion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Motion.modulemap; sourceTree = "<group>"; };
 		94CBF031DEB066C48BB570E5B411D1EE /* MotionTransition+Interactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+Interactive.swift"; path = "Sources/Transition/MotionTransition+Interactive.swift"; sourceTree = "<group>"; };
@@ -460,12 +460,12 @@
 		96BC70A6BE7979EEF0784054B24DE72F /* TextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextView.swift; path = Sources/iOS/Text/TextView.swift; sourceTree = "<group>"; };
 		971E5B52D18BC3CBD4336B7EA3DE3A69 /* UIView+Snapkit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Snapkit.swift"; path = "SnackBar.swift/Classes/SnackBar/UIView+Snapkit.swift"; sourceTree = "<group>"; };
 		97259BC26EFCB433C0934F7EB7C6E94F /* Depth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Depth.swift; path = Sources/iOS/Type/Depth.swift; sourceTree = "<group>"; };
-		978909736F92A0D633842472D577F1D8 /* McPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = McPicker; path = McPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		978909736F92A0D633842472D577F1D8 /* McPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = McPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989CADA7AC60D8B00EA3BDD6354BFFB1 /* McPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "McPicker-umbrella.h"; sourceTree = "<group>"; };
 		99CFE52ABE75C10AB0998B61084AE552 /* Material+Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Material+Array.swift"; path = "Sources/iOS/Extension/Material+Array.swift"; sourceTree = "<group>"; };
 		9C64096BD55A229D652F98452C234C76 /* MotionCoreAnimationViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionCoreAnimationViewContext.swift; path = Sources/Animator/MotionCoreAnimationViewContext.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A170825FB4449859E0F7104B84A32D5B /* Material.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Material.modulemap; sourceTree = "<group>"; };
 		A314A5B23AD6C677592CBDE8180E2C20 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		A607951D399E4162185A1EA1E9E62F43 /* CollectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = Sources/iOS/Collection/CollectionViewController.swift; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 		AED32FEA8D76F628CA6CC7347A15AEEE /* SwiftGifOrigin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGifOrigin.debug.xcconfig; sourceTree = "<group>"; };
 		AFCB86F57102CB53326C58A3787411DA /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		B0491C756CB2E55C5A436AA5FC0665E1 /* Material+UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Material+UIButton.swift"; path = "Sources/iOS/Extension/Material+UIButton.swift"; sourceTree = "<group>"; };
-		B052AFF3A2D65B19A1A9638985E700D2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "Roboto-Regular.ttf"; path = "Sources/Font/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		B052AFF3A2D65B19A1A9638985E700D2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Sources/Font/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B0FD1CD1CD7D8A9CA2602F84ECDACAC5 /* PulseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseView.swift; path = Sources/iOS/View/PulseView.swift; sourceTree = "<group>"; };
 		B2676ABBD7D767637F74F70B3E2BC6E0 /* Icon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = Sources/iOS/Icon/Icon.swift; sourceTree = "<group>"; };
 		B42F75E067CF1B9FF9CBD398E0322AD7 /* SnackBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnackBar.swift; path = SnackBar.swift/Classes/SnackBar/SnackBar.swift; sourceTree = "<group>"; };
@@ -516,7 +516,7 @@
 		CF1365A64249D70C46B72BDA13CE6058 /* TransitionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionController.swift; path = Sources/iOS/Transition/TransitionController.swift; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D29BC52B60F05FA3F4761C0C253826B7 /* MotionContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionContext.swift; path = Sources/MotionContext.swift; sourceTree = "<group>"; };
-		D4F6A2860CB523B85235F862573290FC /* Material-com.cosmicmind.material.icons */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Material-com.cosmicmind.material.icons"; path = com.cosmicmind.material.icons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F6A2860CB523B85235F862573290FC /* com.cosmicmind.material.icons.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.cosmicmind.material.icons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67C317FE09DCA843C0F2129688C97B4 /* DynamicFontType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicFontType.swift; path = Sources/iOS/Font/DynamicFontType.swift; sourceTree = "<group>"; };
 		D77BA2499B282D7B568A1D11DC6AA311 /* Pods-DailyPlanner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DailyPlanner-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D81D00424A8207960FEA531F349A8D0B /* NavigationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationItem.swift; path = Sources/iOS/Navigation/NavigationItem.swift; sourceTree = "<group>"; };
@@ -543,7 +543,7 @@
 		E90AB97432EFB673619AD27F981908CB /* UIImage+Gif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Gif.swift"; path = "SwiftGifCommon/UIImage+Gif.swift"; sourceTree = "<group>"; };
 		E943A1CE07A802AD9A8ACC3A7389F033 /* Material.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Material.debug.xcconfig; sourceTree = "<group>"; };
 		E97FA7EEA8A531CFDB6C34AB0B5FF614 /* MotionPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionPlugin.swift; path = Sources/MotionPlugin.swift; sourceTree = "<group>"; };
-		E9E83947349F7E8028823F3766451329 /* Motion */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Motion; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E83947349F7E8028823F3766451329 /* Motion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EABA618B4C70E0F30E75E94A38176FAE /* SnackBar.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnackBar.swift-dummy.m"; sourceTree = "<group>"; };
 		EB7511C504FB111D3D6FD6321B35DF90 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
@@ -647,22 +647,21 @@
 				2C78B6CAD942F6A0A3941464F305C48A /* Core */,
 				3323B91212132D70A7044A27B48F6C06 /* Support Files */,
 			);
-			name = Material;
 			path = Material;
 			sourceTree = "<group>";
 		};
 		0CBF4025ECF5DC45EE6D9F7FEC49AACA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				443FA6EAD8AD94038AA34DE1C97850C9 /* Material */,
-				906DCF7AE09E64FEC6089566F3CDD431 /* Material-com.cosmicmind.material.fonts */,
-				D4F6A2860CB523B85235F862573290FC /* Material-com.cosmicmind.material.icons */,
-				978909736F92A0D633842472D577F1D8 /* McPicker */,
-				E9E83947349F7E8028823F3766451329 /* Motion */,
-				38165AB2BE57F67999279EF2C817A9DF /* Pods-DailyPlanner */,
-				4929359851D190238E50C2893C2250D2 /* SnackBar.swift */,
-				979486118B3E90C08386079D57962701 /* SnapKit */,
-				8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin */,
+				443FA6EAD8AD94038AA34DE1C97850C9 /* Material.framework */,
+				906DCF7AE09E64FEC6089566F3CDD431 /* com.cosmicmind.material.fonts.bundle */,
+				D4F6A2860CB523B85235F862573290FC /* com.cosmicmind.material.icons.bundle */,
+				978909736F92A0D633842472D577F1D8 /* McPicker.framework */,
+				E9E83947349F7E8028823F3766451329 /* Motion.framework */,
+				38165AB2BE57F67999279EF2C817A9DF /* Pods_DailyPlanner.framework */,
+				4929359851D190238E50C2893C2250D2 /* SnackBar_swift.framework */,
+				979486118B3E90C08386079D57962701 /* SnapKit.framework */,
+				8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -862,7 +861,6 @@
 				3DC1895CADA7B048EC28372A9437DCBB /* UILayoutSupport+Extensions.swift */,
 				37358FFC485F18EE055DEDA4A4EDF804 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -892,7 +890,6 @@
 				304E47AD27B38784F33F512A6D68D0CE /* UIView+Swipe.swift */,
 				3853AEC515087CD37DBB0C6D6A98D421 /* Support Files */,
 			);
-			name = SnackBar.swift;
 			path = SnackBar.swift;
 			sourceTree = "<group>";
 		};
@@ -926,7 +923,6 @@
 				E90AB97432EFB673619AD27F981908CB /* UIImage+Gif.swift */,
 				4BB2C59C241E9C7411D4073EF9F49929 /* Support Files */,
 			);
-			name = SwiftGifOrigin;
 			path = SwiftGifOrigin;
 			sourceTree = "<group>";
 		};
@@ -1004,7 +1000,6 @@
 				DFFD83F385B9A880E098B69D5A213146 /* McTextField.swift */,
 				FA4FCB1DC0F1FBB4EF32EFEA80888B24 /* Support Files */,
 			);
-			name = McPicker;
 			path = McPicker;
 			sourceTree = "<group>";
 		};
@@ -1029,7 +1024,6 @@
 				6C1C4FF15294AA6AD17DAD7725A5C2DC /* Core */,
 				BE80926994AFE82037EBF55321019FB9 /* Support Files */,
 			);
-			name = Motion;
 			path = Motion;
 			sourceTree = "<group>";
 		};
@@ -1166,7 +1160,7 @@
 			);
 			name = SnapKit;
 			productName = SnapKit;
-			productReference = 979486118B3E90C08386079D57962701 /* SnapKit */;
+			productReference = 979486118B3E90C08386079D57962701 /* SnapKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		34CF0DED83AEC3BDC693B0C2B30D6BB5 /* Material */ = {
@@ -1187,7 +1181,7 @@
 			);
 			name = Material;
 			productName = Material;
-			productReference = 443FA6EAD8AD94038AA34DE1C97850C9 /* Material */;
+			productReference = 443FA6EAD8AD94038AA34DE1C97850C9 /* Material.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4868DDC380A1E60113BCBFD4FB8D0449 /* Pods-DailyPlanner */ = {
@@ -1211,7 +1205,7 @@
 			);
 			name = "Pods-DailyPlanner";
 			productName = Pods_DailyPlanner;
-			productReference = 38165AB2BE57F67999279EF2C817A9DF /* Pods-DailyPlanner */;
+			productReference = 38165AB2BE57F67999279EF2C817A9DF /* Pods_DailyPlanner.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7AA720B0F2D31209EF25EA147A1CAEAA /* Material-com.cosmicmind.material.icons */ = {
@@ -1228,7 +1222,7 @@
 			);
 			name = "Material-com.cosmicmind.material.icons";
 			productName = com.cosmicmind.material.icons;
-			productReference = D4F6A2860CB523B85235F862573290FC /* Material-com.cosmicmind.material.icons */;
+			productReference = D4F6A2860CB523B85235F862573290FC /* com.cosmicmind.material.icons.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		9312109646DF39EBE725AD8F96A8C18B /* Motion */ = {
@@ -1246,7 +1240,7 @@
 			);
 			name = Motion;
 			productName = Motion;
-			productReference = E9E83947349F7E8028823F3766451329 /* Motion */;
+			productReference = E9E83947349F7E8028823F3766451329 /* Motion.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9FB907AAFDB0530AEA6CA76A05AE3BBC /* McPicker */ = {
@@ -1264,7 +1258,7 @@
 			);
 			name = McPicker;
 			productName = McPicker;
-			productReference = 978909736F92A0D633842472D577F1D8 /* McPicker */;
+			productReference = 978909736F92A0D633842472D577F1D8 /* McPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A6FDA12F240B6380B0E07FF5D1FFD506 /* SnackBar.swift */ = {
@@ -1283,7 +1277,7 @@
 			);
 			name = SnackBar.swift;
 			productName = SnackBar_swift;
-			productReference = 4929359851D190238E50C2893C2250D2 /* SnackBar.swift */;
+			productReference = 4929359851D190238E50C2893C2250D2 /* SnackBar_swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A7F9119A842E66F127E010A97169E4F4 /* SwiftGifOrigin */ = {
@@ -1301,7 +1295,7 @@
 			);
 			name = SwiftGifOrigin;
 			productName = SwiftGifOrigin;
-			productReference = 8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin */;
+			productReference = 8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DA66ABAC25D7CDF884876E490A5C3539 /* Material-com.cosmicmind.material.fonts */ = {
@@ -1318,7 +1312,7 @@
 			);
 			name = "Material-com.cosmicmind.material.fonts";
 			productName = com.cosmicmind.material.fonts;
-			productReference = 906DCF7AE09E64FEC6089566F3CDD431 /* Material-com.cosmicmind.material.fonts */;
+			productReference = 906DCF7AE09E64FEC6089566F3CDD431 /* com.cosmicmind.material.fonts.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1388,8 +1382,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2FAFD746E484BDA3E341684F1EF5F20 /* Material-com.cosmicmind.material.fonts in Resources */,
-				80D26F09B6A6448BFE9457B9ED0A533B /* Material-com.cosmicmind.material.icons in Resources */,
+				B2FAFD746E484BDA3E341684F1EF5F20 /* com.cosmicmind.material.fonts.bundle in Resources */,
+				80D26F09B6A6448BFE9457B9ED0A533B /* com.cosmicmind.material.icons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
