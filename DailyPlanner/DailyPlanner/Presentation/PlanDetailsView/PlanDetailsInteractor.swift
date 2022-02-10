@@ -29,9 +29,9 @@ class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore ,Not
     
     var plan: Plan?
     var presenter: PlanDetailsPresentationLogic?
-    var worker:  CoreDataManagerProtocol & NotificationManagerProtocol
+    var worker:  CoreDataManagerDetailsWorkerProtocol
     
-    init(worker: CoreDataManagerProtocol & NotificationManagerProtocol) {
+    init(worker: CoreDataManagerDetailsWorkerProtocol) {
         self.worker = worker
     }
     
@@ -52,7 +52,7 @@ class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore ,Not
     }
     
      func sendNotification(name: String) {
-        worker.sendNotification(name: name)
+         NotificationCenter.default.post(name: NSNotification.Name(name), object: nil)
     }
 }
 
