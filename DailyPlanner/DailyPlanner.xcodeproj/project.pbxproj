@@ -26,7 +26,6 @@
 		22DDC62027B3C4FE0037DC92 /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61E27B3C4FE0037DC92 /* PlanListTableViewCell.swift */; };
 		22DDC62127B3C4FE0037DC92 /* PlanListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC61F27B3C4FE0037DC92 /* PlanListTableViewCell.xib */; };
 		22DDC62327B3C5310037DC92 /* PlanList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC62227B3C5310037DC92 /* PlanList.storyboard */; };
-		22DDC62627B3C7360037DC92 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62527B3C7360037DC92 /* LocalNotificationManager.swift */; };
 		22DDC62827B3C78A0037DC92 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62727B3C78A0037DC92 /* NotificationManager.swift */; };
 		22DDC62A27B3C7BE0037DC92 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */; };
 		22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */; };
@@ -61,7 +60,6 @@
 		22DDC61E27B3C4FE0037DC92 /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
 		22DDC61F27B3C4FE0037DC92 /* PlanListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanListTableViewCell.xib; sourceTree = "<group>"; };
 		22DDC62227B3C5310037DC92 /* PlanList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanList.storyboard; sourceTree = "<group>"; };
-		22DDC62527B3C7360037DC92 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		22DDC62727B3C78A0037DC92 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListPresenter.swift; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 		22DDC62427B3C68D0037DC92 /* ManagerProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				22DDC62527B3C7360037DC92 /* LocalNotificationManager.swift */,
 				22DDC62727B3C78A0037DC92 /* NotificationManager.swift */,
 				22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */,
 			);
@@ -358,7 +355,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F8565827B4EB7800B3F632 /* PlanDetailsRouter.swift in Sources */,
-				22DDC62627B3C7360037DC92 /* LocalNotificationManager.swift in Sources */,
 				22F8565027B4E49A00B3F632 /* PlanDetailsModel.swift in Sources */,
 				22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */,
 				22DDC62027B3C4FE0037DC92 /* PlanListTableViewCell.swift in Sources */,
