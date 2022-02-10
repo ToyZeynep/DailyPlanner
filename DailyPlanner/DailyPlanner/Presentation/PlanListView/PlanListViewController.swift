@@ -16,7 +16,7 @@ protocol PlanListDisplayLogic: AnyObject {
 }
 
 final class PlanListViewController: UIViewController {
-    var interactor: PlanListBusinessLogic?
+    var interactor: (PlanListBusinessLogic & NotificationManagerListInteractorProtocol & LocalNotificationManagerProtocol)?
     var router: (PlanListRoutingLogic & PlanListDataPassing)?
     var viewModel: PlanList.Fetch.ViewModel?
     

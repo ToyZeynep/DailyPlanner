@@ -15,23 +15,23 @@ protocol PlanDetailsBusinessLogic: AnyObject {
     func AddPlanDetails(completionTime: Date, name: String, details: String, isComplete: Bool , priority: String , willNotify: Bool , category: String)
     func alertAction(title: String , message: String , action: UIAlertAction)
     func alert(title: String , message: String)
-    func sendNotification(name:String)
-
-
 }
 
 protocol PlanDetailsDataStore: AnyObject {
     var plan: Plan? { get set }
 }
 
-class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore {
-    
+protocol NotificationManagerPlanDetailsProtocol: AnyObject{
+    func sendNotification(name: String)
+}
+
+class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore ,NotificationManagerPlanDetailsProtocol {
     
     var plan: Plan?
     var presenter: PlanDetailsPresentationLogic?
-    var worker:  CoreDataManagerProtocol & NotificationManagerProtocol
+    var worker:  CoreDataManagerDetailsWorkerProtocol
     
-    init(worker: CoreDataManagerProtocol & NotificationManagerProtocol) {
+    init(worker: CoreDataManagerDetailsWorkerProtocol) {
         self.worker = worker
     }
     
@@ -42,8 +42,7 @@ class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore {
     func AddPlanDetails(completionTime: Date, name: String, details: String, isComplete: Bool, priority: String , willNotify : Bool , category: String) {
         worker.addPlan(completionTime: completionTime, name: name, details: details, isComplete: isComplete, priority: priority, willNotify: willNotify , category: category)
     }
-    
-    
+        
     func alertAction(title: String, message: String, action: UIAlertAction) {
         presenter?.alertAction(title: title, message: message, action: action)
     }
@@ -53,11 +52,7 @@ class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore {
     }
     
      func sendNotification(name: String) {
-        worker.sendNotification(name: name)
-
+         NotificationCenter.default.post(name: NSNotification.Name(name), object: nil)
     }
-    
-    
-    
 }
 
