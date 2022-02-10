@@ -133,7 +133,7 @@ class PlanDetailsViewController: UIViewController {
                   interactor?.alert(title: "Please enter a task name", message: "Invalid Task Name")
                   return
         }
-        interactor?.AddPlanDetails(completionTime: completionTime, name: planName, details: detailsTextField.text ?? "", isComplete: false , priority: self.priority ?? "low" , willNotify: self.willNotify ?? false , category: self.category ?? "home")
+        interactor?.AddPlanDetails(completionTime: completionTime, name: planName, details: detailsTextField.text ?? "", isComplete: false , priority: self.priority ?? "low" , willNotify: self.willNotify ?? true , category: self.category ?? "home")
         
         let alertAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
             self.router?.popOver()
