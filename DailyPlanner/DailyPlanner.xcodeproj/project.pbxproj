@@ -7,25 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22015B7127B423C400AC3EEB /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7027B423C400AC3EEB /* TableViewExtension.swift */; };
+		22015B7327B4241200AC3EEB /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7227B4241200AC3EEB /* ViewExtension.swift */; };
+		22015B7527B4245300AC3EEB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7427B4245300AC3EEB /* Alert.swift */; };
+		22015B7827B4249500AC3EEB /* planDetailsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7727B4249500AC3EEB /* planDetailsEnum.swift */; };
 		22DDC5FA27B3B2980037DC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5F927B3B2980037DC92 /* AppDelegate.swift */; };
 		22DDC5FC27B3B2980037DC92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5FB27B3B2980037DC92 /* SceneDelegate.swift */; };
-		22DDC5FE27B3B2980037DC92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5FD27B3B2980037DC92 /* ViewController.swift */; };
+		22DDC5FE27B3B2980037DC92 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5FD27B3B2980037DC92 /* SplashViewController.swift */; };
 		22DDC60127B3B2980037DC92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC5FF27B3B2980037DC92 /* Main.storyboard */; };
 		22DDC60427B3B2980037DC92 /* DailyPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC60227B3B2980037DC92 /* DailyPlanner.xcdatamodeld */; };
 		22DDC60627B3B2990037DC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC60527B3B2990037DC92 /* Assets.xcassets */; };
 		22DDC60927B3B2990037DC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC60727B3B2990037DC92 /* LaunchScreen.storyboard */; };
+		22DDC61427B3C3F20037DC92 /* PlanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61327B3C3F20037DC92 /* PlanListViewController.swift */; };
+		22DDC61627B3C4150037DC92 /* PlanListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61527B3C4150037DC92 /* PlanListInteractor.swift */; };
+		22DDC61827B3C4920037DC92 /* PlanListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61727B3C4920037DC92 /* PlanListWorker.swift */; };
+		22DDC61A27B3C4A20037DC92 /* PlanListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61927B3C4A20037DC92 /* PlanListRouter.swift */; };
+		22DDC61C27B3C4AE0037DC92 /* PlanListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61B27B3C4AE0037DC92 /* PlanListModels.swift */; };
+		22DDC62027B3C4FE0037DC92 /* PlanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC61E27B3C4FE0037DC92 /* PlanListTableViewCell.swift */; };
+		22DDC62127B3C4FE0037DC92 /* PlanListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC61F27B3C4FE0037DC92 /* PlanListTableViewCell.xib */; };
+		22DDC62327B3C5310037DC92 /* PlanList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DDC62227B3C5310037DC92 /* PlanList.storyboard */; };
+		22DDC62827B3C78A0037DC92 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62727B3C78A0037DC92 /* NotificationManager.swift */; };
+		22DDC62A27B3C7BE0037DC92 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */; };
+		22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */; };
+		22F8565027B4E49A00B3F632 /* PlanDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8564F27B4E49A00B3F632 /* PlanDetailsModel.swift */; };
+		22F8565227B4E52B00B3F632 /* PlanDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8565127B4E52B00B3F632 /* PlanDetailsWorker.swift */; };
+		22F8565427B4E8D800B3F632 /* PlanDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8565327B4E8D800B3F632 /* PlanDetailsInteractor.swift */; };
+		22F8565627B4EB1300B3F632 /* PlanDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8565527B4EB1300B3F632 /* PlanDetailsPresenter.swift */; };
+		22F8565827B4EB7800B3F632 /* PlanDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8565727B4EB7800B3F632 /* PlanDetailsRouter.swift */; };
+		22F8565A27B4EC1600B3F632 /* PlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8565927B4EC1600B3F632 /* PlanDetailsViewController.swift */; };
+		22F8565C27B4FEB200B3F632 /* PlanDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F8565B27B4FEB200B3F632 /* PlanDetails.storyboard */; };
+		9AE64C4464AA8D3F802FC66D /* Pods_DailyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C6B2400701F4B612747D44 /* Pods_DailyPlanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22015B7027B423C400AC3EEB /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		22015B7227B4241200AC3EEB /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		22015B7427B4245300AC3EEB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		22015B7727B4249500AC3EEB /* planDetailsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planDetailsEnum.swift; sourceTree = "<group>"; };
 		22DDC5F627B3B2980037DC92 /* DailyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DDC5F927B3B2980037DC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DDC5FB27B3B2980037DC92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22DDC5FD27B3B2980037DC92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22DDC5FD27B3B2980037DC92 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		22DDC60027B3B2980037DC92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22DDC60327B3B2980037DC92 /* DailyPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyPlanner.xcdatamodel; sourceTree = "<group>"; };
 		22DDC60527B3B2990037DC92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DDC60827B3B2990037DC92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22DDC60A27B3B2990037DC92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22DDC61327B3C3F20037DC92 /* PlanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewController.swift; sourceTree = "<group>"; };
+		22DDC61527B3C4150037DC92 /* PlanListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListInteractor.swift; sourceTree = "<group>"; };
+		22DDC61727B3C4920037DC92 /* PlanListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListWorker.swift; sourceTree = "<group>"; };
+		22DDC61927B3C4A20037DC92 /* PlanListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListRouter.swift; sourceTree = "<group>"; };
+		22DDC61B27B3C4AE0037DC92 /* PlanListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListModels.swift; sourceTree = "<group>"; };
+		22DDC61E27B3C4FE0037DC92 /* PlanListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListTableViewCell.swift; sourceTree = "<group>"; };
+		22DDC61F27B3C4FE0037DC92 /* PlanListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanListTableViewCell.xib; sourceTree = "<group>"; };
+		22DDC62227B3C5310037DC92 /* PlanList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanList.storyboard; sourceTree = "<group>"; };
+		22DDC62727B3C78A0037DC92 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListPresenter.swift; sourceTree = "<group>"; };
+		22F8564F27B4E49A00B3F632 /* PlanDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsModel.swift; sourceTree = "<group>"; };
+		22F8565127B4E52B00B3F632 /* PlanDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsWorker.swift; sourceTree = "<group>"; };
+		22F8565327B4E8D800B3F632 /* PlanDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsInteractor.swift; sourceTree = "<group>"; };
+		22F8565527B4EB1300B3F632 /* PlanDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsPresenter.swift; sourceTree = "<group>"; };
+		22F8565727B4EB7800B3F632 /* PlanDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsRouter.swift; sourceTree = "<group>"; };
+		22F8565927B4EC1600B3F632 /* PlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsViewController.swift; sourceTree = "<group>"; };
+		22F8565B27B4FEB200B3F632 /* PlanDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanDetails.storyboard; sourceTree = "<group>"; };
+		77C6B2400701F4B612747D44 /* Pods_DailyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33A2981975F05DECFE1A0DC /* Pods-DailyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyPlanner.release.xcconfig"; path = "Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		FE2632E3F895D1BD6D3FA12F /* Pods-DailyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +81,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE64C4464AA8D3F802FC66D /* Pods_DailyPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22015B6F27B423A500AC3EEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22015B7027B423C400AC3EEB /* TableViewExtension.swift */,
+				22015B7227B4241200AC3EEB /* ViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		22015B7627B4247500AC3EEB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				22015B7727B4249500AC3EEB /* planDetailsEnum.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		22015B7927B424A600AC3EEB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				22015B7A27B452D500AC3EEB /* Helpers */,
+				22DDC62427B3C68D0037DC92 /* ManagerProtocols */,
+				22015B6F27B423A500AC3EEB /* Extensions */,
+				22015B7627B4247500AC3EEB /* Constants */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		22015B7A27B452D500AC3EEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				22015B7427B4245300AC3EEB /* Alert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		22DDC5ED27B3B2980037DC92 = {
 			isa = PBXGroup;
 			children = (
 				22DDC5F827B3B2980037DC92 /* DailyPlanner */,
 				22DDC5F727B3B2980037DC92 /* Products */,
+				7440004226315319FA89CD02 /* Pods */,
+				DD9050A35876EF4761CC6A39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +145,99 @@
 		22DDC5F827B3B2980037DC92 /* DailyPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				22015B7927B424A600AC3EEB /* Util */,
+				22DDC61227B3C3260037DC92 /* Presentation */,
 				22DDC5F927B3B2980037DC92 /* AppDelegate.swift */,
 				22DDC5FB27B3B2980037DC92 /* SceneDelegate.swift */,
-				22DDC5FD27B3B2980037DC92 /* ViewController.swift */,
-				22DDC5FF27B3B2980037DC92 /* Main.storyboard */,
 				22DDC60527B3B2990037DC92 /* Assets.xcassets */,
 				22DDC60727B3B2990037DC92 /* LaunchScreen.storyboard */,
 				22DDC60A27B3B2990037DC92 /* Info.plist */,
 				22DDC60227B3B2980037DC92 /* DailyPlanner.xcdatamodeld */,
 			);
 			path = DailyPlanner;
+			sourceTree = "<group>";
+		};
+		22DDC61027B3C2FB0037DC92 /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				22DDC5FD27B3B2980037DC92 /* SplashViewController.swift */,
+				22DDC5FF27B3B2980037DC92 /* Main.storyboard */,
+			);
+			path = SplashView;
+			sourceTree = "<group>";
+		};
+		22DDC61127B3C3100037DC92 /* PlanListView */ = {
+			isa = PBXGroup;
+			children = (
+				22DDC61D27B3C4C20037DC92 /* PlanListCell */,
+				22DDC61327B3C3F20037DC92 /* PlanListViewController.swift */,
+				22DDC61527B3C4150037DC92 /* PlanListInteractor.swift */,
+				22DDC62D27B3D1BC0037DC92 /* PlanListPresenter.swift */,
+				22DDC61727B3C4920037DC92 /* PlanListWorker.swift */,
+				22DDC61927B3C4A20037DC92 /* PlanListRouter.swift */,
+				22DDC61B27B3C4AE0037DC92 /* PlanListModels.swift */,
+				22DDC62227B3C5310037DC92 /* PlanList.storyboard */,
+			);
+			path = PlanListView;
+			sourceTree = "<group>";
+		};
+		22DDC61227B3C3260037DC92 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				22DDC61027B3C2FB0037DC92 /* SplashView */,
+				22DDC61127B3C3100037DC92 /* PlanListView */,
+				22F8564E27B4E44300B3F632 /* PlanDetailsView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		22DDC61D27B3C4C20037DC92 /* PlanListCell */ = {
+			isa = PBXGroup;
+			children = (
+				22DDC61E27B3C4FE0037DC92 /* PlanListTableViewCell.swift */,
+				22DDC61F27B3C4FE0037DC92 /* PlanListTableViewCell.xib */,
+			);
+			path = PlanListCell;
+			sourceTree = "<group>";
+		};
+		22DDC62427B3C68D0037DC92 /* ManagerProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				22DDC62727B3C78A0037DC92 /* NotificationManager.swift */,
+				22DDC62927B3C7BE0037DC92 /* CoreDataManager.swift */,
+			);
+			path = ManagerProtocols;
+			sourceTree = "<group>";
+		};
+		22F8564E27B4E44300B3F632 /* PlanDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				22F8565927B4EC1600B3F632 /* PlanDetailsViewController.swift */,
+				22F8565327B4E8D800B3F632 /* PlanDetailsInteractor.swift */,
+				22F8565127B4E52B00B3F632 /* PlanDetailsWorker.swift */,
+				22F8564F27B4E49A00B3F632 /* PlanDetailsModel.swift */,
+				22F8565527B4EB1300B3F632 /* PlanDetailsPresenter.swift */,
+				22F8565727B4EB7800B3F632 /* PlanDetailsRouter.swift */,
+				22F8565B27B4FEB200B3F632 /* PlanDetails.storyboard */,
+			);
+			path = PlanDetailsView;
+			sourceTree = "<group>";
+		};
+		7440004226315319FA89CD02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE2632E3F895D1BD6D3FA12F /* Pods-DailyPlanner.debug.xcconfig */,
+				C33A2981975F05DECFE1A0DC /* Pods-DailyPlanner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD9050A35876EF4761CC6A39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77C6B2400701F4B612747D44 /* Pods_DailyPlanner.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22DDC60D27B3B2990037DC92 /* Build configuration list for PBXNativeTarget "DailyPlanner" */;
 			buildPhases = (
+				D23D2F7BDFF0D003AF0EEDA0 /* [CP] Check Pods Manifest.lock */,
 				22DDC5F227B3B2980037DC92 /* Sources */,
 				22DDC5F327B3B2980037DC92 /* Frameworks */,
 				22DDC5F427B3B2980037DC92 /* Resources */,
+				86EE5BC0CCEE71A5231943AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,23 +300,87 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F8565C27B4FEB200B3F632 /* PlanDetails.storyboard in Resources */,
+				22DDC62127B3C4FE0037DC92 /* PlanListTableViewCell.xib in Resources */,
 				22DDC60927B3B2990037DC92 /* LaunchScreen.storyboard in Resources */,
 				22DDC60627B3B2990037DC92 /* Assets.xcassets in Resources */,
+				22DDC62327B3C5310037DC92 /* PlanList.storyboard in Resources */,
 				22DDC60127B3B2980037DC92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86EE5BC0CCEE71A5231943AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyPlanner/Pods-DailyPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D23D2F7BDFF0D003AF0EEDA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22DDC5F227B3B2980037DC92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F8565827B4EB7800B3F632 /* PlanDetailsRouter.swift in Sources */,
+				22F8565027B4E49A00B3F632 /* PlanDetailsModel.swift in Sources */,
+				22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */,
+				22DDC62027B3C4FE0037DC92 /* PlanListTableViewCell.swift in Sources */,
+				22015B7527B4245300AC3EEB /* Alert.swift in Sources */,
 				22DDC60427B3B2980037DC92 /* DailyPlanner.xcdatamodeld in Sources */,
-				22DDC5FE27B3B2980037DC92 /* ViewController.swift in Sources */,
+				22DDC5FE27B3B2980037DC92 /* SplashViewController.swift in Sources */,
+				22F8565427B4E8D800B3F632 /* PlanDetailsInteractor.swift in Sources */,
 				22DDC5FA27B3B2980037DC92 /* AppDelegate.swift in Sources */,
+				22015B7327B4241200AC3EEB /* ViewExtension.swift in Sources */,
+				22DDC61427B3C3F20037DC92 /* PlanListViewController.swift in Sources */,
+				22DDC62827B3C78A0037DC92 /* NotificationManager.swift in Sources */,
+				22DDC62A27B3C7BE0037DC92 /* CoreDataManager.swift in Sources */,
+				22015B7127B423C400AC3EEB /* TableViewExtension.swift in Sources */,
+				22F8565227B4E52B00B3F632 /* PlanDetailsWorker.swift in Sources */,
 				22DDC5FC27B3B2980037DC92 /* SceneDelegate.swift in Sources */,
+				22DDC61C27B3C4AE0037DC92 /* PlanListModels.swift in Sources */,
+				22F8565A27B4EC1600B3F632 /* PlanDetailsViewController.swift in Sources */,
+				22015B7827B4249500AC3EEB /* planDetailsEnum.swift in Sources */,
+				22F8565627B4EB1300B3F632 /* PlanDetailsPresenter.swift in Sources */,
+				22DDC61827B3C4920037DC92 /* PlanListWorker.swift in Sources */,
+				22DDC61627B3C4150037DC92 /* PlanListInteractor.swift in Sources */,
+				22DDC61A27B3C4A20037DC92 /* PlanListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +524,7 @@
 		};
 		22DDC60E27B3B2990037DC92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2632E3F895D1BD6D3FA12F /* Pods-DailyPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,6 +536,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +554,7 @@
 		};
 		22DDC60F27B3B2990037DC92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C33A2981975F05DECFE1A0DC /* Pods-DailyPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +566,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
