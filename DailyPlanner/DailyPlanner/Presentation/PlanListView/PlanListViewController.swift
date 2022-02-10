@@ -66,8 +66,9 @@ final class PlanListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
+        interactor?.getNotification(name: "AddPlan")
+        planListTableView.reloadData()
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationBar.backgroundColor = .clear
     }
