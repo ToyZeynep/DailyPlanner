@@ -21,7 +21,6 @@ final class PlanListViewController: UIViewController {
     var viewModel: PlanList.Fetch.ViewModel?
     
     @IBOutlet weak var constantLabelYour: UILabel!
-    
     @IBOutlet weak var constantLabelPlans: UILabel!
     @IBOutlet weak var percentIsCompleteLabel: UILabel!
     @IBOutlet weak var transparentView: UIView!
@@ -33,8 +32,26 @@ final class PlanListViewController: UIViewController {
     @IBOutlet weak var planListSortButton: UIButton!
     @IBOutlet weak var planListTableView: UITableView!
     
+    var completedPlan = 0 {
+        didSet{
+            percentIsCompleteLabel.text = "%\(completedPlan) completed"
+        }
+    }
     
-   
+    func percentIsComplete(){
+       
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        if viewModel?.planList.count != 0{
+        for task in (self.viewModel?.planList)! {
+            let str = task?.isComplete
+            if str == true{
+                filteredData.append(task)
+            }
+        }
+            completedPlan = ((filteredData.count) * 100) / ((viewModel?.planList.count)!)
+        }
+        
+    }
     
     // MARK: Object lifecycle
     
@@ -49,12 +66,14 @@ final class PlanListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationBar.backgroundColor = .clear
     }
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         interactor?.fetchPlanList()
         planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
@@ -135,6 +154,9 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
                     
                 case Category.business.rawValue:
                     
@@ -146,6 +168,9 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
                     
                 case Category.shopping.rawValue:
                     
@@ -157,6 +182,9 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
                     
                 case Category.feelGood.rawValue:
                     
@@ -168,6 +196,10 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
+                    
                 case Priority.high.rawValue:
                     
                     self!.interactor?.fetchPlanList()
@@ -178,6 +210,10 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
+                    
                 case Priority.medium.rawValue:
                     
                     self!.interactor?.fetchPlanList()
@@ -188,6 +224,10 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
+                    
                 case Priority.low.rawValue:
                     
                     self!.interactor?.fetchPlanList()
@@ -198,17 +238,24 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
                     
                 case IsComplete.completed.rawValue:
                     
                     self!.interactor?.fetchPlanList()
                     var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
                     for task in (self!.viewModel?.planList)! {
-                        let str = task?.isComplete
-                        if str == true{
+                        
+                        if task?.isComplete == true{
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
+                    
                 case IsComplete.inCompleted.rawValue:
                     
                     self!.interactor?.fetchPlanList()
@@ -219,8 +266,11 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
                     
-                case WillNotify.willNotNotify.rawValue:
+                case WillNotify.willNotify.rawValue:
                     
                     self!.interactor?.fetchPlanList()
                     var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
@@ -230,6 +280,10 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
+                    
                 case WillNotify.willNotNotify.rawValue:
                     
                     self!.interactor?.fetchPlanList()
@@ -240,16 +294,21 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
+                
+                    self!.viewModel?.planList.removeAll()
+                    self!.viewModel?.planList.append(contentsOf: filteredData)
+                    self!.planListTableView.reloadData()
+                    
                 case Sort.alfabetik1.rawValue:
                     
-                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! > ($1?.name!)!})
+                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! < ($1?.name!)!})
                     self!.viewModel?.planList.removeAll()
                     self!.viewModel?.planList.append(contentsOf: sortList!)
                     self!.planListTableView.reloadData()
                     
                 case Sort.alfabetik2.rawValue:
                     
-                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! < ($1?.name!)!})
+                    let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! > ($1?.name!)!})
                     self!.viewModel?.planList.removeAll()
                     self!.viewModel?.planList.append(contentsOf: sortList!)
                     self!.planListTableView.reloadData()
@@ -281,25 +340,7 @@ final class PlanListViewController: UIViewController {
      }
   )}
     
-    
-    
-    
-    
-    func percentIsComplete() -> Int{
-        var count = Int()
-        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-        for task in (self.viewModel?.planList)! {
-            let str = task?.isComplete
-            if str == true{
-                filteredData.append(task)
-            }
-        }
-        if viewModel?.planList.count != 0{
-             count = ((filteredData.count) * 100) / ((viewModel?.planList.count)!)
-        }
-        
-        return count
-    }
+  
     
 }
 
@@ -313,15 +354,16 @@ extension PlanListViewController: PlanListDisplayLogic {
         planListSortButton.setImage(UIImage(named: "sort.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
         planListSortButton.tintColor = UIColor(rgb: 0x9969c1)
         planListAddButton.layer.cornerRadius = 30
-        planListAddButton.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        planListAddButton.setImage(UIImage(systemName: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
         planListAddButton.tintColor = .white
-        planListAddButton.backgroundColor = UIColor(rgb: 0xe4bce5)
+        planListAddButton.backgroundColor = .systemPurple
         planListSearchBar.borderColor = UIColor(rgb: 0xe4bce5)
         planListSearchBar.tintColor = UIColor(rgb: 0xe4bce5)
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMMM"
         let date = formatter.string(from: Date())
         planListDateLabel.text =  date
+        percentIsComplete()
         
         
     }
@@ -342,8 +384,13 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListCell") as?
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListTableViewCell") as?
                 PlanListTableViewCell else { return UITableViewCell() }
+        cell.nameLabel.text = viewModel?.planList[indexPath.row]?.name
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM"
+        let date = formatter.string(from: (viewModel?.planList[indexPath.row]?.completionTime)!)
+        cell.dateLabel.text = date
         categoryImageView(index: indexPath.row, imageView: cell.categoryImageView)
         isComplete(index: indexPath.row, button: cell.isCompleteButton)
         priorityViewStatus(index: indexPath.row, view: cell.priorityView)
@@ -353,7 +400,6 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         willNotify(button: cell.willNotifyButton, index: indexPath.row)
         cell.willNotifyButton.addTapGesture { [self] in
             willNotifyChangeButtonAction(index: indexPath.row)
-           
         }
         return cell
     }
@@ -375,14 +421,16 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
 
     func isComplete(index: Int , button: UIButton){
-        button.tintColor = UIColor(rgb: 0x9969c1)
+       
+        
         switch viewModel?.planList[index]?.isComplete{
         case true:
             button.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor = UIColor(rgb: 0x9969c1)
+            button.tintColor =  UIColor(rgb: 0x9969c1)
+           
         case false :
             button.setImage(UIImage(named: "x.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor = UIColor(rgb: 0x9969c1)
+            button.tintColor = UIColor(rgb: 0xe4bce5)
         case .none:
             break
         case .some(_):
@@ -391,7 +439,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
     
     func isCompleteButtonAction(index: Int){
-        
+        percentIsComplete()
         let editAction = UIAlertAction(title: "OK", style: .default) { [self] UIAlertAction in
             
             interactor?.updateIsComplete(index: index)
@@ -401,8 +449,10 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         switch viewModel?.planList[index]?.isComplete{
         case true:
         interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as incomplete?", action: editAction)
+       
         case false:
         interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as complete?", action: editAction)
+       
         case .none:
             break
         case .some(_):
@@ -411,13 +461,16 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
    
     func willNotify(button: UIButton , index: Int ){
-        button.tintColor = UIColor(rgb: 0x9969c1)
+        button.tintColor = UIColor(rgb: 0xe4bce5)
         switch viewModel?.planList[index]?.willNotify {
         case true:
+            button.tintColor = UIColor(rgb: 0x9969c1)
             interactor?.addWillNotify(index: index)
             button.setImage(UIImage(systemName: "bell.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
         case false:
+            button.tintColor = UIColor(rgb: 0xe4bce5)
             button.setImage(UIImage(systemName: "bell.slash")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            
         case .none:
             break
         case .some(_):
@@ -450,9 +503,9 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         case Priority.high.rawValue:
             view.backgroundColor = .purple
         case Priority.medium.rawValue:
-            view.backgroundColor = .systemPurple
-        case Priority.low.rawValue:
             view.backgroundColor = .magenta
+        case Priority.low.rawValue:
+            view.backgroundColor = UIColor(rgb: 0xe4bce5)
         case .none:
              break
         case .some(_):
@@ -461,7 +514,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
     
     func categoryImageView(index: Int , imageView: UIImageView){
-        imageView.tintColor = UIColor(rgb: 0x9969c1)
+        imageView.tintColor = UIColor(rgb: 0xe4bce5)
         switch viewModel?.planList[index]?.category{
             
         case Category.home.rawValue:
@@ -472,8 +525,6 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
             imageView.image =  UIImage(systemName: "star.fill")
         case Category.shopping.rawValue:
             imageView.image =  UIImage(systemName: "cart.badge.plus.fill")
-            
-            
         case .none:
             break
         case .some(_):

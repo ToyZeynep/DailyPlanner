@@ -53,6 +53,7 @@ class PlanListInteractor: PlanListBusinessLogic, PlanListDataStore , Notificatio
         }
     }
     
+    
     func removePlan(index: Int) {
         worker.removePlan(object: planList![index])
     }

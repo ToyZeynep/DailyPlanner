@@ -16,19 +16,9 @@ protocol PlanListPresentationLogic: AnyObject {
 }
 
 final class PlanListPresenter: PlanListPresentationLogic {
-    func presentToDo(response: PlanList.Fetch.Response) {
-        
-    }
-    
-  
-    
     weak var viewController: PlanListDisplayLogic?
-
-    
     func presentPlan(response: PlanList.Fetch.Response) {
-        
         var planList: [PlanList.Fetch.ViewModel.Plan] = []
-        
         response.planList.forEach {
             planList.append(PlanList.Fetch.ViewModel.Plan(name: $0.name,
                                                           completionTime: $0.completionTime,
@@ -40,7 +30,6 @@ final class PlanListPresenter: PlanListPresentationLogic {
         }
         
         viewController?.displayPlan(viewModel: PlanList.Fetch.ViewModel(planList: planList))
-        
     }
     
     func alertAction(title: String , message: String , action: UIAlertAction) {

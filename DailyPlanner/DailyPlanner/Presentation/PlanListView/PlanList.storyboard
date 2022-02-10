@@ -96,7 +96,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ok">
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -206,7 +206,7 @@
                         <outlet property="planListImageView" destination="6Y5-WA-O1h" id="dcW-cc-0GY"/>
                         <outlet property="planListSearchBar" destination="T2L-0t-DcU" id="p1R-kT-0Yu"/>
                         <outlet property="planListSortButton" destination="nbf-Nq-QCX" id="62I-Qn-rdG"/>
-                        <outlet property="planListTableView" destination="Gd4-ow-rME" id="S8o-un-1aF"/>
+                        <outlet property="planListTableView" destination="Gd4-ow-rME" id="5xt-Sq-p3O"/>
                         <outlet property="transparentView" destination="Lix-Ec-EeO" id="97A-O4-gac"/>
                     </connections>
                 </viewController>
@@ -218,7 +218,7 @@
     <resources>
         <image name="bulut" width="635" height="357"/>
         <image name="filter" width="30" height="30"/>
-        <image name="ok" width="24" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sort" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
