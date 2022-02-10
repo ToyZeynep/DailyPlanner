@@ -10,6 +10,7 @@ import UIKit
 
 protocol PlanListRoutingLogic: AnyObject {
     func routeToDetails(index: Int)
+    func routeToAdd() 
     
 }
 
@@ -22,13 +23,20 @@ final class PlanListRouter: PlanListRoutingLogic, PlanListDataPassing {
     weak var viewController: PlanListViewController?
     var dataStore: PlanListDataStore?
 
+    func routeToAdd() {
+        let storyBoard = UIStoryboard(name: "PlanDetails", bundle: nil)
+        let destVC: PlanDetailsViewController = storyBoard.instantiateViewController(identifier: "PlanDetails")
+        destVC.modalPresentationStyle = .fullScreen
+        viewController?.navigationController?.pushViewController(destVC, animated: true)
+    }
+    
     func routeToDetails(index: Int) {
-  //      let storyBoard = UIStoryboard(name: "PlanDetails", bundle: nil)
-  //      let destVC: PlanDetailsViewController = storyBoard.instantiateViewController(identifier: "PlanDetails")
-  //      let currentPlan = dataStore?.planList?[index]
-  //      destVC.router?.dataStore?.plan = currentPlan!
-  //      destVC.modalPresentationStyle = .fullScreen
-  //      viewController?.navigationController?.pushViewController(destVC, animated: true)
+        let storyBoard = UIStoryboard(name: "PlanDetails", bundle: nil)
+        let destVC: PlanDetailsViewController = storyBoard.instantiateViewController(identifier: "PlanDetails")
+        let currentPlan = dataStore?.planList?[index]
+        destVC.router?.dataStore?.plan = currentPlan!
+        destVC.modalPresentationStyle = .fullScreen
+        viewController?.navigationController?.pushViewController(destVC, animated: true)
     }
     
 }

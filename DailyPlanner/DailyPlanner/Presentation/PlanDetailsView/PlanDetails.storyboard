@@ -125,7 +125,8 @@
                                         <rect key="frame" x="154" y="713" width="45" height="45"/>
                                         <color key="backgroundColor" red="0.80855405329999996" green="0.61191081999999997" blue="0.85912507770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Y2O-w2-uhB"/>
+                                            <constraint firstAttribute="width" constant="45" id="5Mg-xJ-6Oj" userLabel="width = 50"/>
+                                            <constraint firstAttribute="height" constant="45" id="Y2O-w2-uhB" userLabel="height = 50"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="ok"/>
@@ -161,6 +162,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Uo1-hK-z6C" secondAttribute="trailing" constant="8" id="ht6-YX-MC8"/>
                                     <constraint firstAttribute="trailing" secondItem="kDQ-On-oI4" secondAttribute="trailing" constant="8" id="hxR-of-1oz"/>
                                     <constraint firstAttribute="trailing" secondItem="EkY-6c-IFC" secondAttribute="trailing" constant="8" id="hyl-s2-5yI"/>
+                                    <constraint firstAttribute="bottom" secondItem="zRG-6R-F6T" secondAttribute="bottom" constant="266" id="jhN-tk-P1Y"/>
                                     <constraint firstAttribute="bottom" secondItem="t1e-qZ-9yh" secondAttribute="bottom" constant="40" id="pTe-Rw-LQC"/>
                                     <constraint firstItem="kDQ-On-oI4" firstAttribute="top" secondItem="Uo1-hK-z6C" secondAttribute="bottom" constant="25" id="q9J-Rr-INa"/>
                                     <constraint firstItem="Uo1-hK-z6C" firstAttribute="leading" secondItem="dZ2-o5-nQJ" secondAttribute="leading" constant="8" id="rwN-SE-2RG"/>
@@ -195,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655.07246376811599" y="85.714285714285708"/>
+            <point key="canvasLocation" x="-259" y="102"/>
         </scene>
     </scenes>
     <resources>

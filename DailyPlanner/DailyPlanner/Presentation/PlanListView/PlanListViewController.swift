@@ -51,6 +51,7 @@ final class PlanListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.backgroundColor = .clear
     }
     
     override func viewDidLoad() {
@@ -72,6 +73,11 @@ final class PlanListViewController: UIViewController {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+    }
+    
+    
+    @IBAction func listAddButtonTapped(_ sender: Any) {
+        router?.routeToAdd()
     }
     
     
