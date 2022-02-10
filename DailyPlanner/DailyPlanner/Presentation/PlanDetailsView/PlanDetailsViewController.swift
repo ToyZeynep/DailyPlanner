@@ -32,6 +32,15 @@ class PlanDetailsViewController: UIViewController {
     @IBOutlet weak var detailsDatePicker: UIDatePicker!
     @IBOutlet weak var detailsNotifMeLabel: UILabel!
     @IBOutlet weak var detailsNotifMeSwitch: UISwitch!
+    
+ 
+    @IBOutlet weak var detailsDetailsView: UIView!
+    @IBOutlet weak var detailsImageView: UIImageView!
+    @IBOutlet weak var detailsNameLabel: UILabel!
+    @IBOutlet weak var detailsDetailsLabel: UILabel!
+    @IBOutlet weak var detailsDatelabel: UILabel!
+    @IBOutlet weak var detailsIsCompleteLabel: UILabel!
+    
     var category: String?
     var willNotify : Bool?
     var isComplete: Bool?
@@ -57,7 +66,7 @@ class PlanDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xc286d3)
+        self.navigationController?.navigationBar.backgroundColor = .clear
         view.backgroundColor = UIColor(rgb: 0xc286d3)
     }
     
@@ -146,8 +155,32 @@ class PlanDetailsViewController: UIViewController {
 extension PlanDetailsViewController: PlanDetailsDisplayLogic {
     
     func displayPlanDetails(viewModel: PlanDetails.Fetch.ViewModel) {
-        self.title = "AddPlan"
-    
+        
+        if router?.dataStore?.plan?.name != nil{
+            self.title = "Details"
+            detailsAddView.isUserInteractionEnabled = false
+            detailsAddView.isHidden = true
+            detailsDetailsView.backgroundColor = UIColor(rgb: 0xe4bce5)
+            detailsNameLabel.text = viewModel.name
+            detailsDetailsLabel.text = viewModel.details
+            detailsDatelabel.text = viewModel.category
+            detailsNameLabel.layer.borderWidth = 1
+            detailsNameLabel.layer.borderColor = UIColor.purple.cgColor
+            detailsNameLabel.layer.cornerRadius = 10
+            detailsDetailsLabel.layer.borderWidth = 1
+            detailsDetailsLabel.layer.borderColor = UIColor.purple.cgColor
+            detailsDetailsLabel.layer.cornerRadius = 10
+            detailsDatelabel.layer.cornerRadius = 10
+            detailsDatelabel.layer.borderWidth = 1
+            detailsDatelabel.layer.borderColor = UIColor.purple.cgColor
+            detailsIsCompleteLabel.layer.borderColor = UIColor.systemPurple.cgColor
+            detailsIsCompleteLabel.layer.borderWidth = 1
+            detailsIsCompleteLabel.layer.cornerRadius = 10
+        } else {
+        
+            detailsDetailsView.isHidden = true
+            detailsDetailsView.isUserInteractionEnabled = false
+            self.title = "AddPlan"
             self.detailsAddView.layer.cornerRadius = 10
             self.detailsAddView.layer.shadowOffset = CGSize(width: 20, height: 20)
             self.detailsAddView.layer.shadowColor = UIColor.purple.cgColor
@@ -161,4 +194,4 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
             self.detailsAddButton.tintColor = .white
  }
 }
-
+}
