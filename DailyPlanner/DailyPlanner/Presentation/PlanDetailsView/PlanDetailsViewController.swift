@@ -13,9 +13,7 @@ import Material
 
 protocol PlanDetailsDisplayLogic: AnyObject {
     func displayPlanDetails(viewModel: PlanDetails.Fetch.ViewModel)
-    
 }
-
 
 class PlanDetailsViewController: UIViewController {
     
@@ -54,7 +52,7 @@ class PlanDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        interactor?.fetchPlanDetails()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -149,18 +147,18 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
     
     func displayPlanDetails(viewModel: PlanDetails.Fetch.ViewModel) {
         self.title = "AddPlan"
-        detailsAddView.layer.cornerRadius = 10
-        detailsAddView.layer.shadowOffset = CGSize(width: 20, height: 20)
-        detailsAddView.layer.shadowColor = UIColor.purple.cgColor
-        detailsAddView.layer.shadowRadius = 6
-        detailsAddView.layer.shadowOpacity = 1
-        detailsAddView.layer.shouldRasterize = true
-        detailsAddView.layer.rasterizationScale = UIScreen.main.scale
-        detailsAddButton.layer.cornerRadius = 22.5
-        detailsAddButton.backgroundColor = .systemPurple
-        detailsAddButton.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        detailsAddButton.tintColor = .white
-    }
+    
+            self.detailsAddView.layer.cornerRadius = 10
+            self.detailsAddView.layer.shadowOffset = CGSize(width: 20, height: 20)
+            self.detailsAddView.layer.shadowColor = UIColor.purple.cgColor
+            self.detailsAddView.layer.shadowRadius = 6
+            self.detailsAddView.layer.shadowOpacity = 1
+            self.detailsAddView.layer.shouldRasterize = true
+            self.detailsAddView.layer.rasterizationScale = UIScreen.main.scale
+            self.detailsAddButton.layer.cornerRadius = 25
+            self.detailsAddButton.backgroundColor = .systemPurple
+            self.detailsAddButton.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            self.detailsAddButton.tintColor = .white
+ }
 }
-
 

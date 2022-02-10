@@ -99,6 +99,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="ok">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="listAddButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vVV-D5-qUK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-DH-Kd9">
                                 <rect key="frame" x="20" y="214" width="130" height="35"/>
