@@ -18,7 +18,7 @@ protocol PlanDetailsDisplayLogic: AnyObject {
 
 class PlanDetailsViewController: UIViewController {
     
-    var interactor: PlanDetailsBusinessLogic?
+    var interactor: (PlanDetailsBusinessLogic & NotificationManagerPlanDetailsProtocol)?
     var worker:  (CoreDataManagerProtocol & NotificationManagerProtocol)?
     var router: (PlanDetailsRoutingLogic & PlanDetailsDataPassing)?
    
