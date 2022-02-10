@@ -211,9 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				22F8565927B4EC1600B3F632 /* PlanDetailsViewController.swift */,
-				22F8564F27B4E49A00B3F632 /* PlanDetailsModel.swift */,
-				22F8565127B4E52B00B3F632 /* PlanDetailsWorker.swift */,
 				22F8565327B4E8D800B3F632 /* PlanDetailsInteractor.swift */,
+				22F8565127B4E52B00B3F632 /* PlanDetailsWorker.swift */,
+				22F8564F27B4E49A00B3F632 /* PlanDetailsModel.swift */,
 				22F8565527B4EB1300B3F632 /* PlanDetailsPresenter.swift */,
 				22F8565727B4EB7800B3F632 /* PlanDetailsRouter.swift */,
 			);
