@@ -16,13 +16,25 @@ protocol PlanDetailsDisplayLogic: AnyObject {
     
 }
 
+
 class PlanDetailsViewController: UIViewController {
     
     var interactor: (PlanDetailsBusinessLogic & NotificationManagerPlanDetailsProtocol)?
     var worker:  (CoreDataManagerProtocol & NotificationManagerProtocol)?
     var router: (PlanDetailsRoutingLogic & PlanDetailsDataPassing)?
-   
-
+    
+    @IBOutlet weak var detailsCategoryLabel: UILabel!
+    @IBOutlet weak var detailsCategorySegment: UISegmentedControl!
+    @IBOutlet weak var detailsPriortyLabel: UILabel!
+    @IBOutlet weak var detailsPrioritySegment: UISegmentedControl!
+    @IBOutlet weak var detailsAddButton: UIButton!
+    @IBOutlet weak var detailsAddView: UIView!
+    @IBOutlet weak var detailsNameTextField: UITextField!
+    @IBOutlet weak var detailsTextField: UITextField!
+    @IBOutlet weak var detailsDatePicker: UIDatePicker!
+    @IBOutlet weak var detailsNotifMeLabel: UILabel!
+    @IBOutlet weak var detailsNotifMeSwitch: UISwitch!
+    
     
     // MARK: Object lifecycle
     
@@ -34,6 +46,17 @@ class PlanDetailsViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xc286d3)
+        view.backgroundColor = UIColor(rgb: 0xc286d3)
     }
     
     // MARK: Setup
@@ -51,17 +74,25 @@ class PlanDetailsViewController: UIViewController {
         router.dataStore = interactor
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func detailsCategorySegmentAction(_ sender: UISegmentedControl) {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.backgroundColor = UIColor(rgb: 0xc286d3)
-        view.backgroundColor = UIColor(rgb: 0xc286d3)
+    @IBAction func DetailsPriortySegmentAction(_ sender: UISegmentedControl) {
+       
     }
+    
+    @IBAction func detailsNotifMeSwitchAction(_ sender: UISwitch) {
+        
+    }
+    
+    @IBAction func DetailsAddButtonTapped(_ sender: Any) {
+        
+    }
+
+   
+    
+   
 }
 
 extension PlanDetailsViewController: PlanDetailsDisplayLogic {
