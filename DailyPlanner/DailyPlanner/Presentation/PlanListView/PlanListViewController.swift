@@ -20,6 +20,11 @@ final class PlanListViewController: UIViewController {
     var router: (PlanListRoutingLogic & PlanListDataPassing)?
     var viewModel: PlanList.Fetch.ViewModel?
     
+    
+    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var businessLabel: UILabel!
+    @IBOutlet weak var shoppingLabel: UILabel!
+    @IBOutlet weak var feelGoodLabel: UILabel!
     @IBOutlet weak var constantLabelYour: UILabel!
     @IBOutlet weak var constantLabelPlans: UILabel!
     @IBOutlet weak var percentIsCompleteLabel: UILabel!
@@ -37,20 +42,70 @@ final class PlanListViewController: UIViewController {
             percentIsCompleteLabel.text = "%\(completedPlan) completed"
         }
     }
+    var categoryHome = 0{
+        didSet{
+            homeLabel.text = "\(categoryHome) Home"
+        }
+    }
+    
+    var categoryBusiness = 0{
+        didSet{
+            businessLabel.text = "\(categoryBusiness) Business"
+        }
+    }
+    
+    var categoryFeelGood = 0{
+        didSet{
+            feelGoodLabel.text = "\(categoryFeelGood) Feel Good"
+        }
+    }
+    
+    var categoryShopping = 0{
+        didSet{
+            shoppingLabel.text = "\(categoryShopping) Shopping"
+        }
+    }
     
     func percentIsComplete(){
-       
+        
         var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
         if viewModel?.planList.count != 0{
-        for task in (self.viewModel?.planList)! {
-            let str = task?.isComplete
-            if str == true{
-                filteredData.append(task)
+            for task in (self.viewModel?.planList)! {
+                let str = task?.isComplete
+                if str == true{
+                    filteredData.append(task)
+                }
             }
-        }
             completedPlan = ((filteredData.count) * 100) / ((viewModel?.planList.count)!)
         }
         
+    }
+    
+    func categoryCount(){
+        
+        if viewModel?.planList.count != 0{
+            for task in (self.viewModel?.planList)! {
+                
+                switch task?.category{
+                    
+                case  Category.home.rawValue:
+                    categoryHome = categoryHome + 1
+                case Category.business.rawValue:
+                    
+                    categoryBusiness = categoryBusiness + 1
+                case Category.shopping.rawValue:
+                    
+                    categoryShopping = categoryShopping + 1
+                case Category.feelGood.rawValue:
+                    
+                    categoryFeelGood = categoryFeelGood + 1
+                case .none:
+                    break
+                case .some(_):
+                    break
+                }
+            }
+        }
     }
     
     // MARK: Object lifecycle
@@ -74,7 +129,7 @@ final class PlanListViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
         interactor?.fetchPlanList()
         planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
@@ -111,7 +166,7 @@ final class PlanListViewController: UIViewController {
     let sort : [String] = [Sort.alfabetik1.rawValue , Sort.alfabetik2.rawValue , Sort.date1.rawValue , Sort.date2.rawValue , Filter.cancel.rawValue]
     
     let filter : [String] = [ Filter.categori.rawValue , Filter.isComplete.rawValue  ,Filter.priority.rawValue  , Filter.willNotify.rawValue ,Filter.cancel.rawValue ]
-
+    
     var selectedSort : String?
     
     
@@ -120,19 +175,19 @@ final class PlanListViewController: UIViewController {
             if let name = selections[0] {
                 self!.interactor?.fetchPlanList()
                 switch name {
-                
+                    
                 case Filter.categori.rawValue :
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            let categoriList = [Category.home.rawValue, Category.shopping.rawValue , Category.business.rawValue , Category.feelGood.rawValue]
-                            self!.showPicker(sender, list: categoriList)
-                        }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let categoriList = [Category.home.rawValue, Category.shopping.rawValue , Category.business.rawValue , Category.feelGood.rawValue]
+                        self!.showPicker(sender, list: categoriList)
+                    }
                 case Filter.isComplete.rawValue:
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         let isCompleteList = [IsComplete.completed.rawValue, IsComplete.inCompleted.rawValue]
                         self!.showPicker(sender, list: isCompleteList)
                     }
-                        
+                    
                 case Filter.priority.rawValue:
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         let priorityList = [Priority.high.rawValue, Priority.medium.rawValue, Priority.low.rawValue]
@@ -295,7 +350,7 @@ final class PlanListViewController: UIViewController {
                             filteredData.append(task)
                         }
                     }
-                
+                    
                     self!.viewModel?.planList.removeAll()
                     self!.viewModel?.planList.append(contentsOf: filteredData)
                     self!.planListTableView.reloadData()
@@ -327,8 +382,8 @@ final class PlanListViewController: UIViewController {
                     self!.viewModel?.planList.removeAll()
                     self!.viewModel?.planList.append(contentsOf: sortList!)
                     self!.planListTableView.reloadData()
-
-                        
+                    
+                    
                 case Filter.cancel.rawValue :
                     
                     self!.interactor?.fetchPlanList()
@@ -336,13 +391,10 @@ final class PlanListViewController: UIViewController {
                     
                 default:
                     break
-           }
+                }
+            }
         }
-     }
-  )}
-    
-  
-    
+    )}
 }
 
 // MARK: ListDisplayLogic
@@ -365,11 +417,12 @@ extension PlanListViewController: PlanListDisplayLogic {
         let date = formatter.string(from: Date())
         planListDateLabel.text =  date
         percentIsComplete()
+        categoryCount()
         
         
     }
 }
- 
+
 
 // MARK: TableView Delegate and DataSource
 
@@ -377,13 +430,13 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if viewModel?.planList.count == 0 {
-                self.planListTableView.setEmptyMessage("Your PlanList is empty ! Let's start :)")
-            } else {
-                self.planListTableView.restore()
-            }
+            self.planListTableView.setEmptyMessage("Your PlanList is empty ! Let's start :)")
+        } else {
+            self.planListTableView.restore()
+        }
         return (viewModel?.planList.count) ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanListTableViewCell") as?
                 PlanListTableViewCell else { return UITableViewCell() }
@@ -408,27 +461,27 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         router?.routeToDetails(index: indexPath.row)
     }
-   
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         viewModel?.planList.remove(at: indexPath.row)
         self.planListTableView.deleteRows(at: [indexPath], with: .automatic)
         interactor?.removePlan(index: indexPath.row)
-    
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-
+    
     func isComplete(index: Int , button: UIButton){
-       
+        
         
         switch viewModel?.planList[index]?.isComplete{
         case true:
             button.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
             button.tintColor =  UIColor(rgb: 0x9969c1)
-           
+            
         case false :
             button.setImage(UIImage(named: "x.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
             button.tintColor = UIColor(rgb: 0xe4bce5)
@@ -449,18 +502,18 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         }
         switch viewModel?.planList[index]?.isComplete{
         case true:
-        interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as incomplete?", action: editAction)
-       
+            interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as incomplete?", action: editAction)
+            
         case false:
-        interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as complete?", action: editAction)
-       
+            interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as complete?", action: editAction)
+            
         case .none:
             break
         case .some(_):
             break
         }
     }
-   
+    
     func willNotify(button: UIButton , index: Int ){
         button.tintColor = UIColor(rgb: 0xe4bce5)
         switch viewModel?.planList[index]?.willNotify {
@@ -482,10 +535,10 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     func willNotifyChangeButtonAction(index: Int){
         
         let editAction = UIAlertAction(title: "OK", style: .default) { [self] UIAlertAction in
-        interactor?.updateWillNotify(index: index)
-        interactor?.fetchPlanList()
-        planListTableView.reloadData()
-    }
+            interactor?.updateWillNotify(index: index)
+            interactor?.fetchPlanList()
+            planListTableView.reloadData()
+        }
         switch viewModel?.planList[index]?.willNotify {
         case true:
             interactor?.removeWillNotify(identifier: [String(index)])
@@ -510,7 +563,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         case Priority.low.rawValue:
             view.backgroundColor = UIColor(rgb: 0xe4bce5)
         case .none:
-             break
+            break
         case .some(_):
             break
         }
@@ -539,11 +592,11 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
 //MARK: SearchBar Delegate
 
 extension PlanListViewController : UISearchBarDelegate {
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(PlanListViewController.reload), object: nil)
         self.perform(#selector(PlanListViewController.reload), with: nil, afterDelay: 0.7)
-      }
+    }
     
     @objc func reload() {
         guard let searchText = planListSearchBar.text else { return }
@@ -556,7 +609,7 @@ extension PlanListViewController : UISearchBarDelegate {
             search(searchText: searchText)
         }
     }
-
+    
     func search(searchText: String){
         var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
         for task in (viewModel?.planList)! {
