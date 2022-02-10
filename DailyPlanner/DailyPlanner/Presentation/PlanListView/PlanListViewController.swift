@@ -36,7 +36,10 @@ final class PlanListViewController: UIViewController {
     @IBOutlet weak var planListFilterButton: UIButton!
     @IBOutlet weak var planListSortButton: UIButton!
     @IBOutlet weak var planListTableView: UITableView!
-    
+    @IBOutlet weak var shopingImageView: UIImageView!
+    @IBOutlet weak var homeImageView: UIImageView!
+    @IBOutlet weak var businessImageView: UIImageView!
+    @IBOutlet weak var feelGoodImageView: UIImageView!
     var completedPlan = 0 {
         didSet{
             percentIsCompleteLabel.text = "%\(completedPlan) completed"
@@ -403,13 +406,13 @@ extension PlanListViewController: PlanListDisplayLogic {
         self.viewModel = viewModel
         planListTableView.reloadData()
         planListFilterButton.setImage(UIImage(named: "filter.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        planListFilterButton.tintColor = UIColor(rgb: 0x9969c1)
+        planListFilterButton.tintColor = .purple
         planListSortButton.setImage(UIImage(named: "sort.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        planListSortButton.tintColor = UIColor(rgb: 0x9969c1)
+        planListSortButton.tintColor = .purple
         planListAddButton.layer.cornerRadius = 30
         planListAddButton.setImage(UIImage(systemName: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
         planListAddButton.tintColor = .white
-        planListAddButton.backgroundColor = .systemPurple
+        planListAddButton.backgroundColor = .purple
         planListSearchBar.borderColor = UIColor(rgb: 0xe4bce5)
         planListSearchBar.tintColor = UIColor(rgb: 0xe4bce5)
         let formatter = DateFormatter()
@@ -480,7 +483,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         switch viewModel?.planList[index]?.isComplete{
         case true:
             button.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
-            button.tintColor =  UIColor(rgb: 0x9969c1)
+            button.tintColor =  .purple
             
         case false :
             button.setImage(UIImage(named: "x.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -518,7 +521,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         button.tintColor = UIColor(rgb: 0xe4bce5)
         switch viewModel?.planList[index]?.willNotify {
         case true:
-            button.tintColor = UIColor(rgb: 0x9969c1)
+            button.tintColor = .purple
             interactor?.addWillNotify(index: index)
             button.setImage(UIImage(systemName: "bell.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
         case false:
@@ -586,7 +589,6 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         case .some(_):
             break
         }
-        
     }
 }
 //MARK: SearchBar Delegate
