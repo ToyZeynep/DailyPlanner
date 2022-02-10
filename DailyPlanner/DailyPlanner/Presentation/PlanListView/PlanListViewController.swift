@@ -488,8 +488,10 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     }
         switch viewModel?.planList[index]?.willNotify {
         case true:
+            interactor?.removeWillNotify(identifier: [String(index)])
             interactor?.alertAction(title: "Are You Sure ", message: "Don't want to receive notifications for this plan?", action: editAction)
         case false:
+            interactor?.addWillNotify(index: index)
             interactor?.alertAction(title: "Are You Sure ", message: "Do you want to receive notifications for this plan?", action: editAction)
         case .none:
             break
@@ -559,7 +561,7 @@ extension PlanListViewController : UISearchBarDelegate {
         var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
         for task in (viewModel?.planList)! {
             let str = task?.name
-            if str!.contains(searchText){
+            if str!.lowercased().contains(searchText.lowercased()){
                 filteredData.append(task)
             }
         }
