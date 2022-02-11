@@ -84,9 +84,10 @@ class PlanListInteractor: PlanListBusinessLogic, PlanListDataStore , Notificatio
         //configuring notification content
         let content = UNMutableNotificationContent()
         content.title = (self.planList?[index].name)!
-        content.body = "A long description of your notification"
+        let body = "There is a notification for you from the Daily Planner"
+        content.body = (self.planList?[index].details) ?? body
         content.sound = UNNotificationSound.defaultCritical
-        content.userInfo = ["CustomData": (self.planList?[index].details)!]
+        content.userInfo = ["CustomData": (self.planList?[index].name)!]
         //specify the conditions for delivery
         let calender = Calendar.current
         var dateComponents = DateComponents()

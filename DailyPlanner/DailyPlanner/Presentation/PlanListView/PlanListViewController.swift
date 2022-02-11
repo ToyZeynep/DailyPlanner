@@ -40,6 +40,10 @@ final class PlanListViewController: UIViewController {
     @IBOutlet weak var homeImageView: UIImageView!
     @IBOutlet weak var businessImageView: UIImageView!
     @IBOutlet weak var feelGoodImageView: UIImageView!
+    
+    let sort : [String] = [Sort.alphabetical1.rawValue , Sort.alphabetical2.rawValue , Sort.date1.rawValue , Sort.date2.rawValue , Filter.cancel.rawValue]
+    let filter : [String] = [ Filter.categori.rawValue , Filter.isComplete.rawValue  ,Filter.priority.rawValue  , Filter.willNotify.rawValue ,Filter.cancel.rawValue ]
+    
     var completedPlan = 0 {
         didSet{
             percentIsCompleteLabel.text = "%\(completedPlan) completed"
@@ -47,67 +51,25 @@ final class PlanListViewController: UIViewController {
     }
     var categoryHome = 0{
         didSet{
-            homeLabel.text = "\(categoryHome) Home"
+            homeLabel.text = "\(categoryHome)"
         }
     }
     
     var categoryBusiness = 0{
         didSet{
-            businessLabel.text = "\(categoryBusiness) Business"
+            businessLabel.text = "\(categoryBusiness)"
         }
     }
     
     var categoryFeelGood = 0{
         didSet{
-            feelGoodLabel.text = "\(categoryFeelGood) Feel Good"
+            feelGoodLabel.text = "\(categoryFeelGood)"
         }
     }
     
     var categoryShopping = 0{
         didSet{
-            shoppingLabel.text = "\(categoryShopping) Shopping"
-        }
-    }
-    
-    func percentIsComplete(){
-        
-        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-        if viewModel?.planList.count != 0{
-            for task in (self.viewModel?.planList)! {
-                let str = task?.isComplete
-                if str == true{
-                    filteredData.append(task)
-                }
-            }
-            completedPlan = ((filteredData.count) * 100) / ((viewModel?.planList.count)!)
-        }
-        
-    }
-    
-    func categoryCount(){
-        
-        if viewModel?.planList.count != 0{
-            for task in (self.viewModel?.planList)! {
-                
-                switch task?.category{
-                    
-                case  Category.home.rawValue:
-                    categoryHome = categoryHome + 1
-                case Category.business.rawValue:
-                    
-                    categoryBusiness = categoryBusiness + 1
-                case Category.shopping.rawValue:
-                    
-                    categoryShopping = categoryShopping + 1
-                case Category.feelGood.rawValue:
-                    
-                    categoryFeelGood = categoryFeelGood + 1
-                case .none:
-                    break
-                case .some(_):
-                    break
-                }
-            }
+            shoppingLabel.text = "\(categoryShopping)"
         }
     }
     
@@ -134,6 +96,7 @@ final class PlanListViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         interactor?.fetchPlanList()
         planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
     }
@@ -166,12 +129,51 @@ final class PlanListViewController: UIViewController {
         showPicker(planListFilterButton, list: filter)
     }
     
-    let sort : [String] = [Sort.alfabetik1.rawValue , Sort.alfabetik2.rawValue , Sort.date1.rawValue , Sort.date2.rawValue , Filter.cancel.rawValue]
+    func percentIsComplete(){
+        
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        if viewModel?.planList.count != 0{
+            for task in (self.viewModel?.planList)! {
+                let str = task?.isComplete
+                if str == true{
+                    filteredData.append(task)
+                }
+            }
+            completedPlan = ((filteredData.count) * 100) / ((viewModel?.planList.count)!)
+        }
+        
+    }
     
-    let filter : [String] = [ Filter.categori.rawValue , Filter.isComplete.rawValue  ,Filter.priority.rawValue  , Filter.willNotify.rawValue ,Filter.cancel.rawValue ]
-    
-    var selectedSort : String?
-    
+    func categoryCount(){
+        categoryHome = 0
+        categoryBusiness = 0
+        categoryShopping = 0
+        categoryFeelGood = 0
+        
+        if viewModel?.planList.count != 0{
+            for task in (self.viewModel?.planList)! {
+               
+                switch task?.category{
+                    
+                case  Category.home.rawValue:
+                    categoryHome = categoryHome + 1
+                case Category.business.rawValue:
+                    
+                    categoryBusiness = categoryBusiness + 1
+                case Category.shopping.rawValue:
+                    
+                    categoryShopping = categoryShopping + 1
+                case Category.feelGood.rawValue:
+                    
+                    categoryFeelGood = categoryFeelGood + 1
+                case .none:
+                    break
+                case .some(_):
+                    break
+                }
+            }
+        }
+    }
     
     func showPicker(_ sender: UIButton, list: [String]){
         McPicker.showAsPopover(data:[list], fromViewController: self, sourceView: sender, doneHandler:{ [weak self] (selections: [Int : String]) -> Void in
@@ -358,14 +360,14 @@ final class PlanListViewController: UIViewController {
                     self!.viewModel?.planList.append(contentsOf: filteredData)
                     self!.planListTableView.reloadData()
                     
-                case Sort.alfabetik1.rawValue:
+                case Sort.alphabetical1.rawValue:
                     
                     let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! < ($1?.name!)!})
                     self!.viewModel?.planList.removeAll()
                     self!.viewModel?.planList.append(contentsOf: sortList!)
                     self!.planListTableView.reloadData()
                     
-                case Sort.alfabetik2.rawValue:
+                case Sort.alphabetical2.rawValue:
                     
                     let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! > ($1?.name!)!})
                     self!.viewModel?.planList.removeAll()
@@ -415,10 +417,8 @@ extension PlanListViewController: PlanListDisplayLogic {
         planListAddButton.backgroundColor = .purple
         planListSearchBar.borderColor = UIColor(rgb: 0xe4bce5)
         planListSearchBar.tintColor = UIColor(rgb: 0xe4bce5)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM"
-        let date = formatter.string(from: Date())
-        planListDateLabel.text =  date
+        let date = Date()
+        planListDateLabel.text = date.dateAsPrettyString
         percentIsComplete()
         categoryCount()
         
@@ -483,6 +483,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         switch viewModel?.planList[index]?.isComplete{
         case true:
             button.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            
             button.tintColor =  .purple
             
         case false :
@@ -497,19 +498,19 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
     
     func isCompleteButtonAction(index: Int){
         percentIsComplete()
-        let editAction = UIAlertAction(title: "OK", style: .default) { [self] UIAlertAction in
-            
+        switch viewModel?.planList[index]?.isComplete{
+        case true:
+           
+            AppSnackBar.make(in: self.view, message: "\(viewModel?.planList[index]?.name! ?? "plan") mark as incomplete", duration: .custom(1.0)).show()
             interactor?.updateIsComplete(index: index)
             interactor?.fetchPlanList()
             planListTableView.reloadData()
-        }
-        switch viewModel?.planList[index]?.isComplete{
-        case true:
-            interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as incomplete?", action: editAction)
-            
         case false:
-            interactor?.alertAction(title: "Are You Sure ", message: "Do you want to mark as complete?", action: editAction)
             
+            AppSnackBar.make(in: self.view, message: "\(viewModel?.planList[index]?.name! ?? "plan") mark as complete", duration: .custom(1.0)).show()
+            interactor?.updateIsComplete(index: index)
+            interactor?.fetchPlanList()
+            planListTableView.reloadData()
         case .none:
             break
         case .some(_):
@@ -544,9 +545,11 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         }
         switch viewModel?.planList[index]?.willNotify {
         case true:
+            view.shake()
             interactor?.removeWillNotify(identifier: [String(index)])
             interactor?.alertAction(title: "Are You Sure ", message: "Don't want to receive notifications for this plan?", action: editAction)
         case false:
+            view.shake()
             interactor?.addWillNotify(index: index)
             interactor?.alertAction(title: "Are You Sure ", message: "Do you want to receive notifications for this plan?", action: editAction)
         case .none:

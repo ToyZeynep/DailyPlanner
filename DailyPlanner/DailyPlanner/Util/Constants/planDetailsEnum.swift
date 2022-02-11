@@ -20,8 +20,8 @@ enum Category: String {
 }
 
 enum Sort: String {
-    case alfabetik1 = "A-Z"
-    case alfabetik2 = "Z-A"
+    case alphabetical1 = "A-Z"
+    case alphabetical2 = "Z-A"
     case date1 = "Increasing by Date"
     case date2 =  "Descending by Date"
     case cancel = "Deselect"
