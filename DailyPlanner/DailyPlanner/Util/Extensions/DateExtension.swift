@@ -35,7 +35,7 @@ extension Date
     
     var dateAsPrettyString: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd<>MM<>yyyy"
+        formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: self as Date)
     }
 }

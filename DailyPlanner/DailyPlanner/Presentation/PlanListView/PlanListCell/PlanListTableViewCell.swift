@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Material
 
 class PlanListTableViewCell: UITableViewCell {
     
@@ -24,7 +25,7 @@ class PlanListTableViewCell: UITableViewCell {
     override func layoutSubviews() {
           super.layoutSubviews()
           //set the values for top,left,bottom,right margins
-          let margins = UIEdgeInsets(top: 8, left: 2, bottom: 2, right: 8)
+          let margins = EdgeInsets(top: 8, left: 2, bottom: 2, right: 8)
           contentView.frame = contentView.frame.inset(by: margins)
           contentView.layer.cornerRadius = 8
           contentView.backgroundColor = UIColor.white
