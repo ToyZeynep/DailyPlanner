@@ -109,14 +109,14 @@ class PlanDetailsViewController: UIViewController {
        
         if sender.selectedSegmentIndex == 0 {
            
-            priority = Priority.high.rawValue
-            print("low")
+            priority = Priority.low.rawValue
+            
         }else  if sender.selectedSegmentIndex == 1 {
             priority = Priority.medium.rawValue
-            print("medium")
+           
         }else  if sender.selectedSegmentIndex == 2 {
-            priority = Priority.low.rawValue
-            print("high")
+            priority = Priority.high.rawValue
+            
         }else {
             
         }
