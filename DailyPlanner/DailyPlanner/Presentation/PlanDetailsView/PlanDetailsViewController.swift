@@ -32,15 +32,16 @@ class PlanDetailsViewController: UIViewController {
     @IBOutlet weak var detailsDatePicker: UIDatePicker!
     @IBOutlet weak var detailsNotifMeLabel: UILabel!
     @IBOutlet weak var detailsNotifMeSwitch: UISwitch!
-    
- 
+    @IBOutlet weak var calendarDayLabel: UILabel!
+    @IBOutlet weak var calendarMounthLabel: UILabel!
+    @IBOutlet weak var CalendarView: UIView!
     @IBOutlet weak var detailsDetailsView: UIView!
     @IBOutlet weak var detailsImageView: UIImageView!
     @IBOutlet weak var detailsNameLabel: UILabel!
     @IBOutlet weak var detailsDetailsLabel: UILabel!
-    @IBOutlet weak var detailsDatelabel: UILabel!
-    @IBOutlet weak var detailsIsCompleteLabel: UILabel!
+    @IBOutlet weak var calendarWeekDayLabel: UILabel!
     
+    @IBOutlet weak var detailsIsCompleteLabel: UILabel!
     var category: String?
     var willNotify : Bool?
     var isComplete: Bool?
@@ -61,8 +62,10 @@ class PlanDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         interactor?.fetchPlanDetails()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = .white
@@ -134,11 +137,13 @@ class PlanDetailsViewController: UIViewController {
         let date = formatter.string(from: detailsDatePicker.date)
         let completionTime: Date = detailsDatePicker.date
         if completionTime < Date() {
+            detailsAddView.shake()
             interactor?.alert(title: "Please enter a completion date that is in the future.", message: "Invalid Date")
             return
         }
         guard let planName = detailsNameTextField.text,
               !planName.isEmpty else {
+                  detailsAddView.shake()
                   interactor?.alert(title: "Please enter a task name", message: "Invalid Task Name")
                   return
         }
@@ -156,42 +161,68 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
     
     func displayPlanDetails(viewModel: PlanDetails.Fetch.ViewModel) {
         
+        
         if router?.dataStore?.plan?.name != nil{
             self.title = "Details"
             detailsAddView.isUserInteractionEnabled = false
             detailsAddView.isHidden = true
-            detailsDetailsView.backgroundColor = UIColor(rgb: 0xe4bce5)
+            detailsDetailsView.backgroundColor = .white
+            detailsDetailsView.dropViewShadow()
             detailsNameLabel.text = viewModel.name
             detailsDetailsLabel.text = viewModel.details
-            detailsDatelabel.text = viewModel.category
-            detailsNameLabel.layer.borderWidth = 1
-            detailsNameLabel.layer.borderColor = UIColor.purple.cgColor
-            detailsNameLabel.layer.cornerRadius = 10
-            detailsDetailsLabel.layer.borderWidth = 1
-            detailsDetailsLabel.layer.borderColor = UIColor.purple.cgColor
-            detailsDetailsLabel.layer.cornerRadius = 10
-            detailsDatelabel.layer.cornerRadius = 10
-            detailsDatelabel.layer.borderWidth = 1
-            detailsDatelabel.layer.borderColor = UIColor.purple.cgColor
-            detailsIsCompleteLabel.layer.borderColor = UIColor.systemPurple.cgColor
-            detailsIsCompleteLabel.layer.borderWidth = 1
-            detailsIsCompleteLabel.layer.cornerRadius = 10
+            let date = viewModel.completionTime
+            calendarWeekDayLabel.text = date?.dayInWeek
+            calendarDayLabel.text = date?.day
+            calendarMounthLabel.text = date?.month
+            detailsNameLabel.dropShadow()
+            detailsDetailsLabel.dropShadow()
+            detailsIsCompleteLabel.dropShadow()
+            categoryImageViewStatus()
+            CalendarView.dropShadow()
+            isCompleteStatus()
+          
         } else {
         
             detailsDetailsView.isHidden = true
             detailsDetailsView.isUserInteractionEnabled = false
             self.title = "AddPlan"
-            self.detailsAddView.layer.cornerRadius = 10
-            self.detailsAddView.layer.shadowOffset = CGSize(width: 20, height: 20)
-            self.detailsAddView.layer.shadowColor = UIColor.purple.cgColor
-            self.detailsAddView.layer.shadowRadius = 6
-            self.detailsAddView.layer.shadowOpacity = 1
-            self.detailsAddView.layer.shouldRasterize = true
-            self.detailsAddView.layer.rasterizationScale = UIScreen.main.scale
+            detailsAddView.dropViewShadow()
             self.detailsAddButton.layer.cornerRadius = 25
             self.detailsAddButton.backgroundColor = .systemPurple
             self.detailsAddButton.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
             self.detailsAddButton.tintColor = .white
  }
+        
+        func categoryImageViewStatus(){
+            switch viewModel.category {
+               
+                case Category.home.rawValue:
+                    detailsImageView.image = UIImage(systemName: "homekit")
+                case Category.business.rawValue:
+                detailsImageView.image =  UIImage(systemName: "bag")
+                case Category.feelGood.rawValue:
+                detailsImageView.image =  UIImage(systemName: "star.fill")
+                case Category.shopping.rawValue:
+                detailsImageView.image =  UIImage(systemName: "cart.badge.plus.fill")
+                case .none:
+                    break
+                case .some(_):
+                    break
+        }
+    }
+        
+        func isCompleteStatus(){
+            switch viewModel.isComplete {
+            case true:
+                detailsIsCompleteLabel.text = "Completed"
+            case false:
+                detailsIsCompleteLabel.text = "Not Completed"
+                
+            case .none:
+                break
+            case .some(_):
+                break
+            }
+        }
 }
 }

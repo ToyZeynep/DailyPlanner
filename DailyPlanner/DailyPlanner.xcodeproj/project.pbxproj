@@ -11,6 +11,8 @@
 		22015B7327B4241200AC3EEB /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7227B4241200AC3EEB /* ViewExtension.swift */; };
 		22015B7527B4245300AC3EEB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7427B4245300AC3EEB /* Alert.swift */; };
 		22015B7827B4249500AC3EEB /* planDetailsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22015B7727B4249500AC3EEB /* planDetailsEnum.swift */; };
+		2221788D27B638DB0084F1BE /* UIViewContollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221788C27B638DB0084F1BE /* UIViewContollerExtension.swift */; };
+		2221788F27B653BD0084F1BE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221788E27B653BD0084F1BE /* DateExtension.swift */; };
 		22DDC5FA27B3B2980037DC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5F927B3B2980037DC92 /* AppDelegate.swift */; };
 		22DDC5FC27B3B2980037DC92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5FB27B3B2980037DC92 /* SceneDelegate.swift */; };
 		22DDC5FE27B3B2980037DC92 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC5FD27B3B2980037DC92 /* SplashViewController.swift */; };
@@ -44,6 +46,8 @@
 		22015B7227B4241200AC3EEB /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		22015B7427B4245300AC3EEB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		22015B7727B4249500AC3EEB /* planDetailsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planDetailsEnum.swift; sourceTree = "<group>"; };
+		2221788C27B638DB0084F1BE /* UIViewContollerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewContollerExtension.swift; sourceTree = "<group>"; };
+		2221788E27B653BD0084F1BE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		22DDC5F627B3B2980037DC92 /* DailyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DDC5F927B3B2980037DC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DDC5FB27B3B2980037DC92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			children = (
 				22015B7027B423C400AC3EEB /* TableViewExtension.swift */,
 				22015B7227B4241200AC3EEB /* ViewExtension.swift */,
+				2221788C27B638DB0084F1BE /* UIViewContollerExtension.swift */,
+				2221788E27B653BD0084F1BE /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F8565827B4EB7800B3F632 /* PlanDetailsRouter.swift in Sources */,
+				2221788D27B638DB0084F1BE /* UIViewContollerExtension.swift in Sources */,
 				22F8565027B4E49A00B3F632 /* PlanDetailsModel.swift in Sources */,
 				22DDC62E27B3D1BC0037DC92 /* PlanListPresenter.swift in Sources */,
 				22DDC62027B3C4FE0037DC92 /* PlanListTableViewCell.swift in Sources */,
@@ -368,6 +375,7 @@
 				22F8565427B4E8D800B3F632 /* PlanDetailsInteractor.swift in Sources */,
 				22DDC5FA27B3B2980037DC92 /* AppDelegate.swift in Sources */,
 				22015B7327B4241200AC3EEB /* ViewExtension.swift in Sources */,
+				2221788F27B653BD0084F1BE /* DateExtension.swift in Sources */,
 				22DDC61427B3C3F20037DC92 /* PlanListViewController.swift in Sources */,
 				22DDC62827B3C78A0037DC92 /* NotificationManager.swift in Sources */,
 				22DDC62A27B3C7BE0037DC92 /* CoreDataManager.swift in Sources */,
