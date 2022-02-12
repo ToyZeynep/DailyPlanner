@@ -62,20 +62,16 @@ Versions I use:
     <td><img src="https://user-images.githubusercontent.com/75203610/153725429-8459aba8-9b1c-40f7-8f31-6c4def392305.jpeg" width=280 height=480></td>
     <td><img src="https://user-images.githubusercontent.com/75203610/153725461-51be9c31-6a6a-438e-877a-498d9d944b4f.jpeg" width=280 height=480></td>
     <td><img src="https://user-images.githubusercontent.com/75203610/153725479-73405d45-db0b-4d3f-80ef-64caccd42688.jpeg" width=280 height=480></td>
- 
-   
   </tr>
  </table>
 
-
-
-https://user-images.githubusercontent.com/75203610/153725223-4d103bd2-0659-453b-af3f-cbdf8d1c1d19.mp4
-
+https://user-images.githubusercontent.com/75203610/153726419-ac42dc09-f3bc-4276-946b-6e69ca7326dd.mp4
 
 ## Communication <a name="Communication"></a>
+You can contact me for your suggestions :)
+- saniyetoy@outlook.com
 - [GitHub](https://github.com/SaniyeToy)
 - [Linkedln](https://www.linkedin.com/in/saniye-toy/)
-
 
 
 
