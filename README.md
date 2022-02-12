@@ -50,27 +50,35 @@ Versions I use:
 ## Screen Shots <a name="ScreenShots"></a>
  <table>
   <tr>
-    <td>Character List View ,grid layout</td>
-    <td>Character List View ,list layout</td>
-    <td>Filter McPicker</td>
-    <td>Favorites View</td>
-    <td>Details</td>
+    <td>Plan List View</td>
+    <td>Add Plan View</td>
+    <td>Plan Details view</td>
+    <td>List View Search</td>
+
    
   </tr>
   <tr>
-    <td><img src="" width=280 height=480></td>
-    <td><img src="" width=280 height=480></td>
-    <td><img src="" width=280 height=480></td>
-    <td><img src="" width=280 height=480></td>
-    <td><img src="" width=280 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/75203610/153725398-7b5fd0d4-f1ca-4240-95e7-631205224a59.jpeg" width=280 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/75203610/153725429-8459aba8-9b1c-40f7-8f31-6c4def392305.jpeg" width=280 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/75203610/153725461-51be9c31-6a6a-438e-877a-498d9d944b4f.jpeg" width=280 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/75203610/153725479-73405d45-db0b-4d3f-80ef-64caccd42688.jpeg" width=280 height=480></td>
+ 
    
   </tr>
  </table>
 
 
+
+https://user-images.githubusercontent.com/75203610/153725223-4d103bd2-0659-453b-af3f-cbdf8d1c1d19.mp4
+
+
 ## Communication <a name="Communication"></a>
 - [GitHub](https://github.com/SaniyeToy)
 - [Linkedln](https://www.linkedin.com/in/saniye-toy/)
+
+
+
+
 
 
 
