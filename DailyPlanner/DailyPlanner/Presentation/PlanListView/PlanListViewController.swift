@@ -100,6 +100,9 @@ final class PlanListViewController: UIViewController {
         planListTableView.registerNib(PlanListTableViewCell.self, bundle: .main)
     }
     
+    deinit{
+        interactor?.removeNotification(name: "AddPlan")
+    }
     // MARK: Setup
     
     private func setup() {
@@ -468,12 +471,14 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         viewModel?.planList.remove(at: indexPath.row)
         self.planListTableView.deleteRows(at: [indexPath], with: .automatic)
         interactor?.removePlan(index: indexPath.row)
+        categoryCount()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     
+    //MARK: Cell Operations
     func isComplete(index: Int , button: UIButton){
         
         switch viewModel?.planList[index]?.isComplete{
@@ -584,6 +589,7 @@ extension PlanListViewController: UITableViewDelegate , UITableViewDataSource{
         }
     }
 }
+
 //MARK: SearchBar Delegate
 
 extension PlanListViewController : UISearchBarDelegate {
