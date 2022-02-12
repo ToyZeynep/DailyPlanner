@@ -22,6 +22,7 @@ protocol NotificationManagerListInteractorProtocol: AnyObject{
     func getNotification(name: String)
     func removeNotification(name: String)
 }
+
 protocol LocalNotificationManagerProtocol: AnyObject{
     func addWillNotify(index: Int)
     func removeWillNotify(identifier: [String])
@@ -53,7 +54,6 @@ class PlanListInteractor: PlanListBusinessLogic, PlanListDataStore , Notificatio
         }
     }
     
-    
     func removePlan(index: Int) {
         worker.removePlan(object: planList![index])
     }
@@ -66,6 +66,7 @@ class PlanListInteractor: PlanListBusinessLogic, PlanListDataStore , Notificatio
         worker.updateWillNotify(object: planList![index])
     }
     
+    //Add Observer
     func getNotification(name: String) {
         NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: name), object: nil)
     }
@@ -111,16 +112,13 @@ class PlanListInteractor: PlanListBusinessLogic, PlanListDataStore , Notificatio
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifier)
         print("removed the notificaiton")
         notificationCenter.removeAllDeliveredNotifications()
-        //notificationCenter.removeAllPendingNotificationRequests()
         notificationCenter.getPendingNotificationRequests(completionHandler: { requests in
             for request in requests {
                 print(requests.count)
                 print(request)
-                print("///////////")
             }
         })
     }
-    
     
     func alertAction(title: String, message: String, action: UIAlertAction) {
         presenter?.alertAction(title: title, message: message, action: action)

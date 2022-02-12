@@ -16,18 +16,18 @@ protocol PlanDetailsPresentationLogic: AnyObject {
 
 final class PlanDetailsPresenter: PlanDetailsPresentationLogic {
     weak var viewController: PlanDetailsDisplayLogic?
-
+    
     func presentPlanDetails(response: PlanDetails.Fetch.Response) {
-       let currentDate = Date()
+        let currentDate = Date()
         viewController?.displayPlanDetails(viewModel: PlanDetails.Fetch.ViewModel(
-                                                  name: response.plan?.name ?? "" ,
-                                                  completionTime: response.plan?.completionTime ?? currentDate,
-                                                  isComplete: response.plan?.isComplete ?? false,
-                                                  details: response.plan?.details ??  "",
-                                                  priority: response.plan?.priority ?? "",
-                                                  willNotify: response.plan?.willNotify ?? true,
-                                                  category: response.plan?.category ?? "home"
-         )
+            name: response.plan?.name ?? "" ,
+            completionTime: response.plan?.completionTime ?? currentDate,
+            isComplete: response.plan?.isComplete ?? false,
+            details: response.plan?.details ??  "",
+            priority: response.plan?.priority ?? "",
+            willNotify: response.plan?.willNotify ?? true,
+            category: response.plan?.category ?? "home"
+        )
         )
     }
     

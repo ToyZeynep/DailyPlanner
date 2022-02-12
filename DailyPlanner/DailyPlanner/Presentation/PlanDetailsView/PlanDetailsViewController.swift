@@ -42,7 +42,6 @@ class PlanDetailsViewController: UIViewController {
     @IBOutlet weak var detailsNameLabel: UILabel!
     @IBOutlet weak var detailsDetailsLabel: UILabel!
     @IBOutlet weak var calendarWeekDayLabel: UILabel!
-    
     @IBOutlet weak var detailsViewCategoryLabel: UILabel!
     @IBOutlet weak var detailsViewCategoryImageView: UIImageView!
     @IBOutlet weak var detailsViewPriorityStatusLabel: UILabel!
@@ -51,6 +50,7 @@ class PlanDetailsViewController: UIViewController {
     @IBOutlet weak var detailsViewWillNotifyLabel: UILabel!
     @IBOutlet weak var detailsViewIsCompleteImageView: UIImageView!
     @IBOutlet weak var detailsIsCompleteLabel: UILabel!
+    
     var category: String?
     var willNotify : Bool?
     var isComplete: Bool?
@@ -101,39 +101,32 @@ class PlanDetailsViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0 {
             category = Category.home.rawValue
-            print("home")
+        
         }else  if sender.selectedSegmentIndex == 1 {
-            print("business")
             category =  Category.business.rawValue
         }else  if sender.selectedSegmentIndex == 2 {
-            print("shopping")
-            category =  Category.shopping.rawValue
-        }else if sender.selectedSegmentIndex == 3 {
-            print("feelGood")
+            
             category =  Category.feelGood.rawValue
+        }else if sender.selectedSegmentIndex == 3 {
+            
+            category =  Category.shopping.rawValue
         }
     }
     
     @IBAction func DetailsPriortySegmentAction(_ sender: UISegmentedControl) {
-       
+        
         if sender.selectedSegmentIndex == 0 {
-           
             priority = Priority.low.rawValue
-            
         }else  if sender.selectedSegmentIndex == 1 {
             priority = Priority.medium.rawValue
-           
         }else  if sender.selectedSegmentIndex == 2 {
             priority = Priority.high.rawValue
-            
         }else {
-            
         }
     }
     
     @IBAction func detailsNotifMeSwitchAction(_ sender: UISwitch) {
-        if (sender.isOn == true )
-        {
+        if (sender.isOn == true ){
             willNotify = true
         }else{
             willNotify = false
@@ -141,27 +134,29 @@ class PlanDetailsViewController: UIViewController {
     }
     
     @IBAction func DetailsAddButtonTapped(_ sender: Any) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM dd yyyy"
-        let date = formatter.string(from: detailsDatePicker.date)
-        let completionTime: Date = detailsDatePicker.date
+        
+        let date = detailsDatePicker.date
+        let completionTime: Date = date
         if completionTime < Date() {
             detailsAddView.shake()
             interactor?.alert(title: "Please enter a completion date that is in the future.", message: "Invalid Date")
             return
         }
+        
         guard let planName = detailsNameTextField.text,
               !planName.isEmpty else {
                   detailsAddView.shake()
                   interactor?.alert(title: "Please enter a task name", message: "Invalid Task Name")
                   return
-        }
+              }
+        
         interactor?.AddPlanDetails(completionTime: completionTime, name: planName, details: detailsTextField.text ?? "", isComplete: false , priority: self.priority ?? "low" , willNotify: self.willNotify ?? true , category: self.category ?? "home")
         
         let alertAction = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
             self.router?.popOver()
             self.interactor?.sendNotification(name: "AddPlan")
         }
+        
         interactor?.alertAction(title: "Congratulations", message: "Added Plan", action: alertAction)
     }
 }
@@ -169,7 +164,6 @@ class PlanDetailsViewController: UIViewController {
 extension PlanDetailsViewController: PlanDetailsDisplayLogic {
     
     func displayPlanDetails(viewModel: PlanDetails.Fetch.ViewModel) {
-        
         
         if router?.dataStore?.plan?.name != nil{
             self.title = "Details"
@@ -188,8 +182,9 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
             isCompleteStatus()
             willNotifyStatus()
             priorityStatus()
+            
         } else {
-        
+            
             detailsDetailsView.isHidden = true
             detailsDetailsView.isUserInteractionEnabled = false
             self.title = "AddPlan"
@@ -198,25 +193,24 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
             self.detailsAddButton.backgroundColor = .systemPurple
             self.detailsAddButton.setImage(UIImage(named: "ok.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
             self.detailsAddButton.tintColor = .white
- }
+        }
         
         func categoryImageViewStatus(){
             switch viewModel.category {
-               
-                case Category.home.rawValue:
+            case Category.home.rawValue:
                 detailsViewCategoryImageView.image = UIImage(systemName: "homekit")
-                case Category.business.rawValue:
+            case Category.business.rawValue:
                 detailsViewCategoryImageView.image =  UIImage(systemName: "bag")
-                case Category.feelGood.rawValue:
+            case Category.feelGood.rawValue:
                 detailsViewCategoryImageView.image =  UIImage(systemName: "star.fill")
-                case Category.shopping.rawValue:
+            case Category.shopping.rawValue:
                 detailsViewCategoryImageView.image =  UIImage(systemName: "cart.badge.plus.fill")
-                case .none:
-                    break
-                case .some(_):
-                    break
+            case .none:
+                break
+            case .some(_):
+                break
+            }
         }
-    }
         
         func isCompleteStatus(){
             switch viewModel.isComplete {
@@ -246,22 +240,19 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
             }
         }
         
-        
         func priorityStatus(){
             switch viewModel.priority {
-             
-                    
-                case Priority.high.rawValue:
+            case Priority.high.rawValue:
                 detailsViewPriorityStatusLabel.text = "high"
-                case Priority.medium.rawValue:
+            case Priority.medium.rawValue:
                 detailsViewPriorityStatusLabel.text = "medium"
-                case Priority.low.rawValue:
+            case Priority.low.rawValue:
                 detailsViewPriorityStatusLabel.text = "low"
-                case .none:
-                    break
-                case .some(_):
-                    break
+            case .none:
+                break
+            case .some(_):
+                break
             }
-}
-}
+        }
+    }
 }

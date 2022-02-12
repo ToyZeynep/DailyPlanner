@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension Date
-{
+extension Date{
+    
     var dayInWeek : String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"

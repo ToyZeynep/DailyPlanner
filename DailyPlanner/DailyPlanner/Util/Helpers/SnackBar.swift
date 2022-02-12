@@ -7,6 +7,7 @@
 
 import Foundation
 import SnackBar_swift
+
 class AppSnackBar: SnackBar {
     
     override var style: SnackBarStyle {

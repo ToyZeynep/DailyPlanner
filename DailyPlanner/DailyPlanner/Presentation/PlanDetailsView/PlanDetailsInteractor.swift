@@ -42,7 +42,7 @@ class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore ,Not
     func AddPlanDetails(completionTime: Date, name: String, details: String, isComplete: Bool, priority: String , willNotify : Bool , category: String) {
         worker.addPlan(completionTime: completionTime, name: name, details: details, isComplete: isComplete, priority: priority, willNotify: willNotify , category: category)
     }
-        
+    
     func alertAction(title: String, message: String, action: UIAlertAction) {
         presenter?.alertAction(title: title, message: message, action: action)
     }
@@ -51,8 +51,8 @@ class PlanDetailsInteractor: PlanDetailsBusinessLogic, PlanDetailsDataStore ,Not
         presenter?.alert(title: title, message: message)
     }
     
-     func sendNotification(name: String) {
-         NotificationCenter.default.post(name: NSNotification.Name(name), object: nil)
+    func sendNotification(name: String) {
+        NotificationCenter.default.post(name: NSNotification.Name(name), object: nil)
     }
 }
 
