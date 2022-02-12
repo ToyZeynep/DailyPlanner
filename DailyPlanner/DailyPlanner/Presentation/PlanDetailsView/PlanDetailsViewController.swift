@@ -21,6 +21,7 @@ class PlanDetailsViewController: UIViewController {
     var worker:  (CoreDataManagerProtocol & NotificationManagerProtocol)?
     var router: (PlanDetailsRoutingLogic & PlanDetailsDataPassing)?
     
+    //Add view
     @IBOutlet weak var detailsCategoryLabel: UILabel!
     @IBOutlet weak var detailsCategorySegment: UISegmentedControl!
     @IBOutlet weak var detailsPriortyLabel: UILabel!
@@ -32,15 +33,23 @@ class PlanDetailsViewController: UIViewController {
     @IBOutlet weak var detailsDatePicker: UIDatePicker!
     @IBOutlet weak var detailsNotifMeLabel: UILabel!
     @IBOutlet weak var detailsNotifMeSwitch: UISwitch!
+    
+    //Details view
     @IBOutlet weak var calendarDayLabel: UILabel!
     @IBOutlet weak var calendarMounthLabel: UILabel!
     @IBOutlet weak var CalendarView: UIView!
     @IBOutlet weak var detailsDetailsView: UIView!
-    @IBOutlet weak var detailsImageView: UIImageView!
     @IBOutlet weak var detailsNameLabel: UILabel!
     @IBOutlet weak var detailsDetailsLabel: UILabel!
     @IBOutlet weak var calendarWeekDayLabel: UILabel!
     
+    @IBOutlet weak var detailsViewCategoryLabel: UILabel!
+    @IBOutlet weak var detailsViewCategoryImageView: UIImageView!
+    @IBOutlet weak var detailsViewPriorityStatusLabel: UILabel!
+    @IBOutlet weak var detailsViewPriorityLabel: UILabel!
+    @IBOutlet weak var detailsViewWillNotifyImageView: UIImageView!
+    @IBOutlet weak var detailsViewWillNotifyLabel: UILabel!
+    @IBOutlet weak var detailsViewIsCompleteImageView: UIImageView!
     @IBOutlet weak var detailsIsCompleteLabel: UILabel!
     var category: String?
     var willNotify : Bool?
@@ -174,13 +183,11 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
             calendarWeekDayLabel.text = date?.dayInWeek
             calendarDayLabel.text = date?.day
             calendarMounthLabel.text = date?.month
-            detailsNameLabel.dropShadow()
-            detailsDetailsLabel.dropShadow()
-            detailsIsCompleteLabel.dropShadow()
             categoryImageViewStatus()
             CalendarView.dropShadow()
             isCompleteStatus()
-          
+            willNotifyStatus()
+            priorityStatus()
         } else {
         
             detailsDetailsView.isHidden = true
@@ -197,13 +204,13 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
             switch viewModel.category {
                
                 case Category.home.rawValue:
-                    detailsImageView.image = UIImage(systemName: "homekit")
+                detailsViewCategoryImageView.image = UIImage(systemName: "homekit")
                 case Category.business.rawValue:
-                detailsImageView.image =  UIImage(systemName: "bag")
+                detailsViewCategoryImageView.image =  UIImage(systemName: "bag")
                 case Category.feelGood.rawValue:
-                detailsImageView.image =  UIImage(systemName: "star.fill")
+                detailsViewCategoryImageView.image =  UIImage(systemName: "star.fill")
                 case Category.shopping.rawValue:
-                detailsImageView.image =  UIImage(systemName: "cart.badge.plus.fill")
+                detailsViewCategoryImageView.image =  UIImage(systemName: "cart.badge.plus.fill")
                 case .none:
                     break
                 case .some(_):
@@ -214,15 +221,47 @@ extension PlanDetailsViewController: PlanDetailsDisplayLogic {
         func isCompleteStatus(){
             switch viewModel.isComplete {
             case true:
-                detailsIsCompleteLabel.text = "Completed"
+                detailsViewIsCompleteImageView.image = UIImage(named: "ok.png")!.withRenderingMode(.alwaysTemplate)
             case false:
-                detailsIsCompleteLabel.text = "Not Completed"
-                
+                detailsViewIsCompleteImageView.image = UIImage(named: "x.png")!.withRenderingMode(.alwaysTemplate)
             case .none:
                 break
             case .some(_):
                 break
             }
         }
+        
+        func willNotifyStatus(){
+            switch viewModel.willNotify {
+            case true:
+                detailsViewWillNotifyImageView.image = UIImage(systemName: "bell.fill")
+                detailsViewWillNotifyImageView.tintColor = UIColor(rgb: 0xe4bce5)
+            case false:
+                detailsViewWillNotifyImageView.image = UIImage(systemName: "bell.slash")
+                detailsViewWillNotifyImageView.tintColor = UIColor(rgb: 0xe4bce5)
+            case .none:
+                break
+            case .some(_):
+                break
+            }
+        }
+        
+        
+        func priorityStatus(){
+            switch viewModel.priority {
+             
+                    
+                case Priority.high.rawValue:
+                detailsViewPriorityStatusLabel.text = "high"
+                case Priority.medium.rawValue:
+                detailsViewPriorityStatusLabel.text = "medium"
+                case Priority.low.rawValue:
+                detailsViewPriorityStatusLabel.text = "low"
+                case .none:
+                    break
+                case .some(_):
+                    break
+            }
+}
 }
 }
