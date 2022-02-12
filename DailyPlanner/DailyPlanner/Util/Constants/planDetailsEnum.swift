@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum Priority: String {
     case high = "high"
     case medium = "medium"
@@ -28,7 +29,7 @@ enum Sort: String {
 }
 
 enum Filter: String {
- 
+    
     case categori = "Categori"
     case isComplete = "IsComplete"
     case priority = "Priority"

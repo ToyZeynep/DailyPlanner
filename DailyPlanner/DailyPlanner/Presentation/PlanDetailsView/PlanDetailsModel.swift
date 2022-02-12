@@ -8,17 +8,17 @@
 import Foundation
 
 enum PlanDetails {
-
+    
     enum Fetch {
-
+        
         struct Request {
-
+            
         }
-
+        
         struct Response {
             let plan: Plan?
         }
-
+        
         struct ViewModel {
             var name: String?
             var completionTime: Date?

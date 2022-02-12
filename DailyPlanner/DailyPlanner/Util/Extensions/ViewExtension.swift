@@ -7,12 +7,13 @@
 
 import Foundation
 import UIKit
+
 extension UIView {
+    
     static var identifier: String {
         return String(describing: self)
     }
 }
-
 
 extension UIView {
     
@@ -20,11 +21,10 @@ extension UIView {
         let tap = MyTapGestureRecognizer(target: self , action: #selector(self.handleTap(_:)))
         tap.action = action
         tap.numberOfTapsRequired = 1
-        
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
-        
     }
+    
     @objc func handleTap(_ sender: MyTapGestureRecognizer) {
         sender.action!()
     }
@@ -51,6 +51,7 @@ extension UIView {
     }
 }
 extension UIView {
+    
     func dropShadow() {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.purple.cgColor
@@ -62,6 +63,7 @@ extension UIView {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
+    
     func dropViewShadow() {
         self.layer.cornerRadius = 10
         self.layer.shadowOffset = CGSize(width: 20, height: 20)
@@ -72,7 +74,9 @@ extension UIView {
         self.layer.rasterizationScale = UIScreen.main.scale
     }
 }
+
 extension UIView {
+    
     func applyGradient() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor(rgb: 0xe4bce5).cgColor,
