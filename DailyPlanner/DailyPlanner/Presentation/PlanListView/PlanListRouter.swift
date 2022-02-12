@@ -10,7 +10,7 @@ import UIKit
 
 protocol PlanListRoutingLogic: AnyObject {
     func routeToDetails(index: Int)
-    func routeToAdd() 
+    func routeToAdd()
     
 }
 
@@ -22,7 +22,7 @@ final class PlanListRouter: PlanListRoutingLogic, PlanListDataPassing {
     
     weak var viewController: PlanListViewController?
     var dataStore: PlanListDataStore?
-
+    
     func routeToAdd() {
         let storyBoard = UIStoryboard(name: "PlanDetails", bundle: nil)
         let destVC: PlanDetailsViewController = storyBoard.instantiateViewController(identifier: "PlanDetails")

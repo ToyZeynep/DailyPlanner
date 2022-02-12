@@ -13,7 +13,7 @@ protocol CoreDataManagerDetailsWorkerProtocol: AnyObject{
 }
 
 final class PlanDetailsWorker:  CoreDataManagerDetailsWorkerProtocol{
-  
+    
     func addPlan(completionTime: Date, name: String, details: String, isComplete: Bool, priority: String, willNotify: Bool, category: String) {
         
         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -25,6 +25,7 @@ final class PlanDetailsWorker:  CoreDataManagerDetailsWorkerProtocol{
         plan.priority = priority
         plan.willNotify = willNotify
         plan.category = category
+        
         do {
             try managedContext.save()
             print("saved")

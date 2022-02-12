@@ -17,11 +17,11 @@ protocol CoreDataManagerListWorkerProtocol: AnyObject{
 }
 
 final class PlanListWorker: CoreDataManagerListWorkerProtocol  {
-
+    
     func removePlan(object: Plan?) {
         
         let  managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            print(object?.name as Any)
+        print(object?.name as Any)
         managedContext.delete(object!)
         do {
             try managedContext.save()
@@ -59,7 +59,7 @@ final class PlanListWorker: CoreDataManagerListWorkerProtocol  {
         }
     }
     
-   
+    
     func updateWillNotify(object: Plan){
         
         let  managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

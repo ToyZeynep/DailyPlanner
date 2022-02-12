@@ -9,7 +9,6 @@ import Foundation
 
 protocol PlanDetailsRoutingLogic: AnyObject {
     func popOver()
-
 }
 
 protocol PlanDetailsDataPassing: AnyObject {
@@ -17,10 +16,11 @@ protocol PlanDetailsDataPassing: AnyObject {
 }
 
 final class PlanDetailsRouter: PlanDetailsRoutingLogic, PlanDetailsDataPassing {
-
+    
     weak var viewController: PlanDetailsViewController?
     var dataStore: PlanDetailsDataStore?
+    
     func popOver(){
-    viewController?.navigationController?.popViewController(animated: true)
+        viewController?.navigationController?.popViewController(animated: true)
     }
 }

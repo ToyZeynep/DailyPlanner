@@ -20,7 +20,7 @@ enum PlanList {
         
         struct ViewModel {
             var planList: [PlanList.Fetch.ViewModel.Plan?]
-
+            
             struct Plan {
                 var name: String?
                 var completionTime: Date?
