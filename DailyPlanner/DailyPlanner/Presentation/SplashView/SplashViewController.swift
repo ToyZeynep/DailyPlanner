@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
         splashImageView.contentMode = .scaleAspectFit
         view.backgroundColor = UIColor(rgb: 0xe4bce5)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
             let storyBoard = UIStoryboard(name: "PlanList", bundle: nil)
             let destVC: PlanListViewController = storyBoard.instantiateViewController(identifier: "PlanList")
             destVC.modalPresentationStyle = .fullScreen

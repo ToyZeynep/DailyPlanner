@@ -101,16 +101,15 @@ class PlanDetailsViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0 {
             category = Category.home.rawValue
-            print("home")
+        
         }else  if sender.selectedSegmentIndex == 1 {
-            print("business")
             category =  Category.business.rawValue
         }else  if sender.selectedSegmentIndex == 2 {
-            print("shopping")
-            category =  Category.shopping.rawValue
-        }else if sender.selectedSegmentIndex == 3 {
-            print("feelGood")
+            
             category =  Category.feelGood.rawValue
+        }else if sender.selectedSegmentIndex == 3 {
+            
+            category =  Category.shopping.rawValue
         }
     }
     
@@ -127,8 +126,7 @@ class PlanDetailsViewController: UIViewController {
     }
     
     @IBAction func detailsNotifMeSwitchAction(_ sender: UISwitch) {
-        if (sender.isOn == true )
-        {
+        if (sender.isOn == true ){
             willNotify = true
         }else{
             willNotify = false
