@@ -1,7 +1,8 @@
 # DailyPlanner
-![logo](https://media1.giphy.com/media/gg9iEAJNHhYySqUvoU/giphy.gif?cid=790b761139a28ea585435c380c23d8992cbcbe78a9eafc6d&rid=giphy.gif&ct=s)
-### Daily Planner is a todo app where you can keep your daily plans and add reminders. Although  Daily Planner looks like a young girl's diary, you don't know how powerful it is :) so let's get started!
+<h3 align="center">
+<img src="https://media1.giphy.com/media/gg9iEAJNHhYySqUvoU/giphy.gif?cid=790b761139a28ea585435c380c23d8992cbcbe78a9eafc6d&rid=giphy.gif&ct=s" width="300" height=300>
 
+### Daily Planner is a todo app where you can keep your daily plans and add reminders. Although  Daily Planner looks like a young girl's diary, you don't know how powerful it is :) so let's get started!
 
 # Table of contents
 1. [Features](#Features)
