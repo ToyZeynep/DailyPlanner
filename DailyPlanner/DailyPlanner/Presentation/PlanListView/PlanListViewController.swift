@@ -210,186 +210,68 @@ final class PlanListViewController: UIViewController {
                     
                 case Category.home.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.category
-                        if str!.contains("home"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterCategory(Category.home.rawValue)
                     
                 case Category.business.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.category
-                        if str!.contains("business"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterCategory(Category.business.rawValue)
                     
                 case Category.shopping.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.category
-                        if str!.contains("shopping"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterCategory(Category.shopping.rawValue)
                     
                 case Category.feelGood.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.category
-                        if str!.contains("feelGood"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterCategory(Category.feelGood.rawValue)
                     
                 case Priority.high.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.priority
-                        if str!.contains("high"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterPriority(Priority.high.rawValue)
                     
                 case Priority.medium.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.priority
-                        if str!.contains("medium"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterPriority(Priority.medium.rawValue)
                     
                 case Priority.low.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.priority
-                        if str!.contains("low"){
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.filterPriority(Priority.low.rawValue)
                     
                 case IsComplete.completed.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        
-                        if task?.isComplete == true{
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.isComplete(true)
                     
                 case IsComplete.inCompleted.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.isComplete
-                        if str == false{
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.isComplete(false)
                     
                 case WillNotify.willNotify.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.willNotify
-                        if str == true{
-                            filteredData.append(task)
-                        }
-                    }
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
+                    self?.willNotify(true)
                     
                 case WillNotify.willNotNotify.rawValue:
                     
-                    self!.interactor?.fetchPlanList()
-                    var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
-                    for task in (self!.viewModel?.planList)! {
-                        let str = task?.willNotify
-                        if str == false{
-                            filteredData.append(task)
-                        }
-                    }
+                    self?.willNotify(false)
                     
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: filteredData)
-                    self!.planListTableView.reloadData()
                     
                 case Sort.alphabetical1.rawValue:
                     
                     let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! < ($1?.name!)!})
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: sortList!)
-                    self!.planListTableView.reloadData()
+                    self?.sortMcPicker(sortList: (sortList ?? self?.viewModel?.planList)!)
                     
                 case Sort.alphabetical2.rawValue:
                     
                     let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.name!)! > ($1?.name!)!})
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: sortList!)
-                    self!.planListTableView.reloadData()
+                    self?.sortMcPicker(sortList: (sortList ?? self?.viewModel?.planList)!)
                     
                 case Sort.date1.rawValue:
                     
                     let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.completionTime!)! < ($1?.completionTime!)!})
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: sortList!)
-                    self!.planListTableView.reloadData()
+                    self?.sortMcPicker(sortList: (sortList ?? self?.viewModel?.planList)!)
                     
                 case Sort.date2.rawValue:
                     
                     let sortList =  self!.viewModel?.planList.sorted(by:{ ($0?.completionTime!)! > ($1?.completionTime!)!})
-                    self!.viewModel?.planList.removeAll()
-                    self!.viewModel?.planList.append(contentsOf: sortList!)
-                    self!.planListTableView.reloadData()
+                    self?.sortMcPicker(sortList: (sortList ?? self?.viewModel?.planList)!)
                     
                 case Filter.cancel.rawValue :
                     
@@ -402,6 +284,72 @@ final class PlanListViewController: UIViewController {
             }
         }
         )}
+    
+    func willNotify(_ param: Bool){
+        self.interactor?.fetchPlanList()
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        for task in (self.viewModel?.planList)! {
+            let str = task?.willNotify
+            if str == param{
+                filteredData.append(task)
+            }
+        }
+        self.viewModel?.planList.removeAll()
+        self.viewModel?.planList.append(contentsOf: filteredData)
+        self.planListTableView.reloadData()
+    }
+    
+    
+    func isComplete(_ param: Bool){
+        self.interactor?.fetchPlanList()
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        for task in (self.viewModel?.planList)! {
+            let str = task?.isComplete
+            if str == param{
+                filteredData.append(task)
+            }
+        }
+        self.viewModel?.planList.removeAll()
+        self.viewModel?.planList.append(contentsOf: filteredData)
+        self.planListTableView.reloadData()
+    }
+    
+    func filterCategory(_ param: String){
+        
+        self.interactor?.fetchPlanList()
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        for task in (self.viewModel?.planList)! {
+            let str = task?.category
+            if str!.contains(param){
+                filteredData.append(task)
+            }
+        }
+        self.viewModel?.planList.removeAll()
+        self.viewModel?.planList.append(contentsOf: filteredData)
+        self.planListTableView.reloadData()
+    }
+    
+    func filterPriority(_ param: String){
+        
+        self.interactor?.fetchPlanList()
+        var filteredData = [PlanList.Fetch.ViewModel.Plan?]()
+        for task in (self.viewModel?.planList)! {
+            let str = task?.category
+            if str!.contains(param){
+                filteredData.append(task)
+            }
+        }
+        self.viewModel?.planList.removeAll()
+        self.viewModel?.planList.append(contentsOf: filteredData)
+        self.planListTableView.reloadData()
+    }
+    
+    func sortMcPicker(sortList: [PlanList.Fetch.ViewModel.Plan?]){
+        self.viewModel?.planList.removeAll()
+        self.viewModel?.planList.append(contentsOf: sortList)
+        self.planListTableView.reloadData()
+        
+    }
 }
 
 // MARK: ListDisplayLogic
