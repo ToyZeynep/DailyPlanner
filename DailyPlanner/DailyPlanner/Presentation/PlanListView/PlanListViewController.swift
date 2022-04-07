@@ -348,7 +348,6 @@ final class PlanListViewController: UIViewController {
         self.viewModel?.planList.removeAll()
         self.viewModel?.planList.append(contentsOf: sortList)
         self.planListTableView.reloadData()
-        
     }
 }
 
