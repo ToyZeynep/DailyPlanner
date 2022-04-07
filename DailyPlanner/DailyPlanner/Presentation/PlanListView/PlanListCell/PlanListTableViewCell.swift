@@ -39,4 +39,13 @@ class PlanListTableViewCell: UITableViewCell {
         
     }
     
+    func configure(viewModel: PlanList.Fetch.ViewModel.Plan) {
+        nameLabel.text = viewModel.name
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM"
+        let date = formatter.string(from: (viewModel.completionTime)!)
+        dateLabel.text = date
+       
+    }
+    
 }
