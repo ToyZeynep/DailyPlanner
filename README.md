@@ -73,7 +73,7 @@ https://user-images.githubusercontent.com/75203610/153726419-ac42dc09-f3bc-4276-
 
 ## Communication <a name="Communication"></a>
 You can contact me for your suggestions :)
-- saniyetoy@outlook.com
+- toyzeynep@outlook.com.tr
 - [GitHub](https://github.com/ToyZeynep)
 - [Linkedln](https://www.linkedin.com/in/zeynep-toy/)
 
